@@ -1,0 +1,51 @@
+/* 디자인 10종: 한 종류씩 크게. 엔디소프트 샘플처럼 화면이 주인공 */
+.dbg-chips{position:sticky;top:64px;z-index:20;display:flex;gap:8px;overflow-x:auto;padding:10px 0;margin:6px 0 22px;background:color-mix(in srgb,var(--bg,#fff) 92%,transparent);backdrop-filter:blur(8px);scrollbar-width:none}
+.dbg-chips::-webkit-scrollbar{display:none}
+.dbg-chips a{flex:none;padding:8px 14px;border-radius:999px;border:1px solid var(--line,#dde1ea);font-size:.86rem;font-weight:700;text-decoration:none;color:inherit;white-space:nowrap}
+.dbg-chips a:hover{border-color:var(--accent,#d93a26);color:var(--accent,#d93a26)}
+.dsg-page .dsg-grid.dbg{display:grid!important;grid-template-columns:1fr!important;gap:40px!important}
+.dbg-row{scroll-margin-top:130px}
+.dbg-row .dsg-card{display:grid!important;grid-template-columns:minmax(0,1.9fr) minmax(0,1fr);gap:0 32px;align-items:center;padding:18px;border-radius:20px;height:auto}
+.dbg-row:nth-child(even) .dsg-card{grid-template-columns:minmax(0,1fr) minmax(0,1.9fr)}
+.dbg-row:nth-child(even) .dbg-img{order:2}
+.dbg-img{grid-row:1/span 5;width:100%;height:auto;aspect-ratio:8/5;object-fit:cover;object-position:top;border-radius:12px;border:1px solid var(--line,#dde1ea);box-shadow:0 30px 60px -34px #0a102088}
+.dbg-row:nth-child(even) .dbg-img{grid-column:2}
+.dbg-row:nth-child(even) .dbg-no,.dbg-row:nth-child(even) .dsg-t,.dbg-row:nth-child(even) .dsg-d,.dbg-row:nth-child(even) .dsg-go{grid-column:1}
+.dbg-no{font-weight:800;font-size:.8rem;letter-spacing:.08em;color:var(--accent,#d93a26)}
+.dbg-row .dsg-t b{font-size:clamp(1.3rem,2.4vw,1.9rem);letter-spacing:-.03em}
+.dbg-row .dsg-t small{font-size:.95rem}
+.dbg-row .dsg-d{display:block!important;font-size:1rem;line-height:1.7;margin-top:6px}
+.dbg-row .dsg-go{display:inline-flex;align-self:start;justify-self:start;margin-top:14px;padding:12px 20px;border-radius:999px;background:var(--accent,#d93a26);color:#fff;font-size:.95rem}
+.dbg-row .dsg-card:hover img{transform:none}
+@media(max-width:860px){
+ .dbg-row .dsg-card,.dbg-row:nth-child(even) .dsg-card{grid-template-columns:1fr;gap:10px;padding:12px}
+ .dbg-img,.dbg-row:nth-child(even) .dbg-img{grid-row:auto;grid-column:auto;order:0}
+ .dbg-row:nth-child(even) .dbg-no,.dbg-row:nth-child(even) .dsg-t,.dbg-row:nth-child(even) .dsg-d,.dbg-row:nth-child(even) .dsg-go{grid-column:auto}
+ .dsg-page .dsg-grid.dbg{gap:22px!important}
+ .dbg-chips{top:56px}
+}
+.dbg-tools{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin:18px 0 0}
+.dbg-sw{display:inline-flex;padding:4px;border-radius:999px;background:var(--panel,#eef0f5);border:1px solid var(--line,#dde1ea)}
+.dbg-sw button{border:0;background:transparent;font:inherit;font-weight:800;font-size:.92rem;padding:11px 20px;border-radius:999px;cursor:pointer;color:inherit}
+.dbg-sw button[aria-pressed=true]{background:#0b1b3b;color:#fff}
+.dbg-sw button:focus-visible{outline:3px solid #ffb703;outline-offset:2px}
+.dbg-note{margin:0;color:var(--dim,#5a6275);font-size:.92rem}
+.dbg-ph{display:none}
+/* 휴대폰 화면 모드 */
+html[data-dview=m] .dsg-page .dsg-grid.dbg{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:34px 26px!important}
+html[data-dview=m] .dbg-row .dsg-card,html[data-dview=m] .dbg-row:nth-child(even) .dsg-card{grid-template-columns:1fr;justify-items:center;text-align:center;gap:6px;padding:20px 16px 22px}
+html[data-dview=m] .dbg-img{display:none}
+html[data-dview=m] .dbg-ph{display:block;width:min(100%,290px);aspect-ratio:390/790;border:8px solid #0b1b3b;border-radius:34px;background:#0b1b3b;overflow:hidden;position:relative;box-shadow:0 34px 56px -30px #0a1020aa;margin-bottom:8px;grid-column:1!important;grid-row:auto!important;order:0!important}
+.dbg-ph-in{position:absolute;inset:0;overflow:hidden;border-radius:24px;background:#fff;--sc:.7}
+.dbg-ph iframe{position:absolute;left:0;top:0;width:390px;height:790px;border:0;transform:scale(var(--sc));transform-origin:0 0;pointer-events:none;background:#fff}
+.dbg-notch{position:absolute;z-index:2;top:6px;left:50%;width:70px;height:6px;margin-left:-35px;border-radius:9px;background:#0b1b3bcc}
+html[data-dview=m] .dbg-row .dsg-d{display:none!important}
+html[data-dview=m] .dbg-row .dsg-go{justify-self:center}
+html[data-dview=m] .dbg-row:nth-child(even) .dbg-no,html[data-dview=m] .dbg-row:nth-child(even) .dsg-t,html[data-dview=m] .dbg-row:nth-child(even) .dsg-go{grid-column:1}
+@media(max-width:1000px){html[data-dview=m] .dsg-page .dsg-grid.dbg{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:560px){html[data-dview=m] .dsg-page .dsg-grid.dbg{grid-template-columns:1fr!important}}
+@media(max-width:860px){.dbg-sw{width:100%}.dbg-sw button{flex:1;padding:12px 8px;font-size:.88rem}}
+/* 이 페이지 머리말은 낮게 */
+.dsg-page .page-head{padding-block:34px 30px}
+.dsg-page .page-head h1{font-size:clamp(1.9rem,4.4vw,2.8rem)}
+.dsg-page .section{padding-top:22px}

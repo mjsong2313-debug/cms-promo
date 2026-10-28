@@ -1,0 +1,12 @@
+/* 스킨 webzine (88차) */
+@media (prefers-color-scheme:light){:root[data-skin=webzine]:not([data-theme=dark]){--bg:#fff;--fg:#10231a;--mute:#5d6f65;--line:#dbe6df;--soft:#e4efe8;--brand:#0b7a4b;--accent:#0b7a4b;--card:#fff;--gnb:#fff;--band:#0b7a4b;--on-band:#fff;--focusbg:#cfe3d9;--rad:12px;--serif:Pretendard,'Noto Sans KR',system-ui,sans-serif}}
+:root[data-skin=webzine][data-theme=light]{--bg:#fff;--fg:#10231a;--mute:#5d6f65;--line:#dbe6df;--soft:#e4efe8;--brand:#0b7a4b;--accent:#0b7a4b;--card:#fff;--gnb:#fff;--band:#0b7a4b;--on-band:#fff;--focusbg:#cfe3d9;--rad:12px;--serif:Pretendard,'Noto Sans KR',system-ui,sans-serif}
+
+[data-skin=webzine] .topbar{display:none}[data-skin=webzine] .masthead .wrap{padding-top:12px;padding-bottom:12px}[data-skin=webzine] .logo.textlogo{font-weight:900;font-size:32px;letter-spacing:-1.5px;color:var(--brand)}
+[data-skin=webzine] .gnb{background:#fff;border-bottom:1px solid var(--line);position:relative;order:-1}[data-skin=webzine] .gnb a{color:var(--fg)}[data-skin=webzine] .gnb a:hover,[data-skin=webzine] .gnb a[aria-current]{background:transparent;color:var(--brand);box-shadow:inset 0 -3px 0 var(--brand)}
+[data-skin=webzine] .menubtn span{background:var(--fg)}[data-skin=webzine] .menubtn{border-right:0}[data-skin=webzine] .ticker{background:#fff}[data-skin=webzine] .ticker strong{color:var(--brand)}
+[data-skin=webzine] .cols.noside .bgrid{grid-template-columns:repeat(4,minmax(0,1fr))}[data-skin=webzine] .cols.noside .bgrid .lead{grid-column:span 2}[data-skin=webzine] .cols.noside .bsub{display:contents}[data-skin=webzine] .cols.noside .bsub .card{display:block}
+[data-skin=webzine] .block .card{background:#fff;border:1px solid var(--line);border-radius:var(--rad);overflow:hidden;padding:0 0 12px}[data-skin=webzine] .block .card .tx{padding:0 14px}[data-skin=webzine] .block .card .th{border-radius:0}
+[data-skin=webzine] .bh h2{color:var(--fg)}[data-skin=webzine] .bh{border-bottom:1px solid var(--fg)}[data-skin=webzine] .footer{background:#0e2a1d}
+@media (max-width:960px){[data-skin=webzine] .cols.noside .bgrid{grid-template-columns:1fr 1fr}[data-skin=webzine] .cols.noside .bgrid .lead{grid-column:span 2}}
+

@@ -1,0 +1,14 @@
+/* 스킨 broadsheet (88차) */
+@media (prefers-color-scheme:light){:root[data-skin=broadsheet]:not([data-theme=dark]){--bg:#f6f1e7;--fg:#1c1a17;--mute:#6b6458;--line:#d8cfbd;--soft:#efe7d6;--brand:#1c1a17;--accent:#8a1c1c;--card:#fbf8f1;--gnb:#1c1a17;--rad:2px;--serif:'Noto Serif KR','Nanum Myeongjo','Batang',serif;--sans:'Noto Serif KR','Nanum Myeongjo','Batang',serif}}
+:root[data-skin=broadsheet][data-theme=light]{--bg:#f6f1e7;--fg:#1c1a17;--mute:#6b6458;--line:#d8cfbd;--soft:#efe7d6;--brand:#1c1a17;--accent:#8a1c1c;--card:#fbf8f1;--gnb:#1c1a17;--rad:2px;--serif:'Noto Serif KR','Nanum Myeongjo','Batang',serif;--sans:'Noto Serif KR','Nanum Myeongjo','Batang',serif}
+
+[data-skin=broadsheet] .masthead .wrap{flex-direction:column;padding-top:22px;padding-bottom:16px;border-bottom:3px double var(--fg);gap:12px}
+[data-skin=broadsheet] .logo.textlogo{font-size:52px;letter-spacing:6px;color:var(--fg);text-align:center}
+[data-skin=broadsheet] .masthead .search{position:absolute;right:16px;top:70px}
+[data-skin=broadsheet] .gnb{background:var(--bg);border-bottom:1px solid var(--fg)}[data-skin=broadsheet] .gnb .wrap{justify-content:center}[data-skin=broadsheet] .gnb a{color:var(--fg);font-weight:700;letter-spacing:.04em}[data-skin=broadsheet] .gnb a:hover,[data-skin=broadsheet] .gnb a[aria-current]{background:transparent;color:var(--accent);box-shadow:inset 0 -2px 0 var(--accent)}
+[data-skin=broadsheet] .menubtn span{background:var(--fg)}[data-skin=broadsheet] .menubtn{border-right-color:var(--line)}
+[data-skin=broadsheet] .topbar{background:transparent;border-bottom:1px solid var(--line)}
+[data-skin=broadsheet] .bh{border-bottom:1px solid var(--fg);border-top:3px solid var(--fg);padding-top:6px}[data-skin=broadsheet] .bh h2{color:var(--fg);font-size:21px}
+[data-skin=broadsheet] .card .th,[data-skin=broadsheet] .slides{border-radius:0}[data-skin=broadsheet] .card h3,[data-skin=broadsheet] .card.lead h3{font-family:var(--serif)}
+[data-skin=broadsheet] .lede h2{font-weight:900;letter-spacing:-1px}[data-skin=broadsheet] .footer{background:#1c1a17}
+

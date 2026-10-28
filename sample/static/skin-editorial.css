@@ -1,0 +1,10 @@
+/* 스킨 editorial (88차) */
+@media (prefers-color-scheme:light){:root[data-skin=editorial]:not([data-theme=dark]){--bg:#fffefb;--fg:#1a1a1a;--mute:#7a7872;--line:#e8e5de;--soft:#f6f4ee;--brand:#1a1a1a;--accent:#b4491f;--card:#fffefb;--gnb:#fffefb;--rad:0;--serif:'Noto Serif KR','Nanum Myeongjo',serif}}
+:root[data-skin=editorial][data-theme=light]{--bg:#fffefb;--fg:#1a1a1a;--mute:#7a7872;--line:#e8e5de;--soft:#f6f4ee;--brand:#1a1a1a;--accent:#b4491f;--card:#fffefb;--gnb:#fffefb;--rad:0;--serif:'Noto Serif KR','Nanum Myeongjo',serif}
+
+[data-skin=editorial] .topbar{background:transparent;border:0}[data-skin=editorial] .masthead .wrap{flex-direction:column;padding-top:20px;padding-bottom:10px}[data-skin=editorial] .logo.textlogo{font-size:38px;font-weight:600;letter-spacing:-.5px;color:var(--fg)}[data-skin=editorial] .masthead .search{display:none}
+[data-skin=editorial] .gnb{background:var(--bg);border-top:1px solid var(--fg);border-bottom:1px solid var(--line)}[data-skin=editorial] .gnb .wrap{justify-content:center}[data-skin=editorial] .gnb a{color:var(--fg);font-weight:500;font-family:var(--sans)}[data-skin=editorial] .gnb a:hover,[data-skin=editorial] .gnb a[aria-current]{background:transparent;color:var(--accent);box-shadow:none}
+[data-skin=editorial] .gnb .gnb-item,[data-skin=editorial] .gnb .wrap>a:nth-of-type(n+4){display:none}[data-skin=editorial] .menubtn{border-right:0}[data-skin=editorial] .menubtn span{background:var(--fg)}
+[data-skin=editorial] .bh{border-bottom:0}[data-skin=editorial] .bh h2{font-weight:600;font-size:18px;color:var(--fg);border-bottom:1px solid var(--fg);padding-bottom:6px}[data-skin=editorial] .block{margin-bottom:46px}
+[data-skin=editorial] .card .th{border-radius:0}[data-skin=editorial] .card.lead h3{font-weight:700}[data-skin=editorial] .ticker{background:transparent}[data-skin=editorial] .cols.noside .main-col{max-width:820px;margin:0 auto}[data-skin=editorial] .footer{background:#1a1a1a}
+

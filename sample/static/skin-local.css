@@ -1,0 +1,11 @@
+/* 스킨 local (88차) */
+@media (prefers-color-scheme:light){:root[data-skin=local]:not([data-theme=dark]){--bg:#fbf8f2;--fg:#241d14;--mute:#7a6e5e;--line:#e4dccb;--soft:#f3ecdd;--brand:#1f5f4a;--accent:#c2571a;--card:#fffdf8;--gnb:#1f5f4a;--rad:8px}}
+:root[data-skin=local][data-theme=light]{--bg:#fbf8f2;--fg:#241d14;--mute:#7a6e5e;--line:#e4dccb;--soft:#f3ecdd;--brand:#1f5f4a;--accent:#c2571a;--card:#fffdf8;--gnb:#1f5f4a;--rad:8px}
+
+[data-skin=local] .masthead{background:var(--soft);border-bottom:3px solid var(--brand)}[data-skin=local] .logo.textlogo{font-weight:900;color:var(--brand);font-size:36px;letter-spacing:-1px}
+[data-skin=local] .gnb a:hover,[data-skin=local] .gnb a[aria-current]{background:rgba(255,255,255,.16);box-shadow:inset 0 -3px 0 #f2b66b}
+[data-skin=local] .cols{grid-template-columns:300px minmax(0,1fr)}[data-skin=local] .cols .side{order:-1}[data-skin=local] .cols .main-col{order:2}
+[data-skin=local] .widget{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:14px 16px}[data-skin=local] .widget h2{color:var(--brand)}
+[data-skin=local] .bh h2{color:var(--brand)}[data-skin=local] .bh{border-bottom-color:var(--brand)}[data-skin=local] .card .th{border-radius:var(--rad)}[data-skin=local] .footer{background:#1b2f27}
+@media (max-width:960px){[data-skin=local] .cols{grid-template-columns:1fr}[data-skin=local] .cols .side{order:3}}
+

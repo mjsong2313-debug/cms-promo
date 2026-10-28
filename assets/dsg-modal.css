@@ -1,0 +1,35 @@
+/* 디자인 10종: 목록은 격자로, 카드를 누르면 큰 창으로 실제 화면이 뜬다 */
+.dsg-page .dsg-grid{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));overflow:visible!important;gap:20px!important;scroll-snap-type:none}
+.dsg-page .dsg-grid>li{flex:none;min-width:0}
+.dsg-card{cursor:zoom-in}
+.dsg-card img{transition:transform .5s var(--ease,ease)}
+.dsg-card:hover img{transform:scale(1.03)}
+.dsg-card{overflow:hidden}
+.dsg-go::after{content:" ↗"}
+
+.dm{position:fixed;inset:0;z-index:300;display:grid;grid-template-rows:auto 1fr;background:#0b1220f2;backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .28s ease,visibility 0s .28s}
+.dm.on{opacity:1;visibility:visible;transition:opacity .28s ease}
+.dm-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:12px max(16px,env(safe-area-inset-left)) 12px max(16px,env(safe-area-inset-right));color:#fff;transform:translateY(-14px);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.dm.on .dm-bar{transform:none}
+.dm-title{flex:1 1 200px;min-width:0;font-weight:800;font-size:1.05rem;line-height:1.25}
+.dm-title small{display:block;font-weight:600;opacity:.75;font-size:.82rem}
+.dm-count{opacity:.7;font-size:.85rem;font-weight:700}
+.dm-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:0 16px;border-radius:999px;border:1px solid #ffffff55;background:#ffffff14;color:#fff;font:700 .92rem/1 inherit;font-family:inherit;text-decoration:none;cursor:pointer}
+.dm-btn:hover{background:#ffffff2e}
+.dm-btn:focus-visible{outline:3px solid #ffb703;outline-offset:2px}
+.dm-btn[aria-pressed=true]{background:#fff;color:#0b1220;border-color:#fff}
+.dm-close{background:#fff;color:#0b1220;border-color:#fff;font-size:1.1rem}
+.dm-grp{display:flex;gap:6px}
+.dm-stage{min-height:0;display:grid;place-items:center;padding:0 max(12px,env(safe-area-inset-left)) max(14px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-right));transform:translateY(26px) scale(.97);opacity:0;transition:transform .4s cubic-bezier(.2,.7,.2,1),opacity .3s}
+.dm.on .dm-stage{transform:none;opacity:1}
+.dm-frame{position:relative;width:100%;height:100%;max-width:1500px;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 40px 90px -30px #000c;transition:max-width .35s cubic-bezier(.2,.7,.2,1),border-radius .35s}
+.dm[data-view=m] .dm-frame{max-width:402px;border-radius:34px;border:10px solid #0b1b3b;background:#0b1b3b}
+.dm-frame iframe{display:block;width:100%;height:100%;border:0;background:#fff}
+.dm[data-view=m] .dm-frame iframe{border-radius:22px}
+.dm-load{position:absolute;inset:0;display:grid;place-items:center;background:#fff;color:#465269;font-weight:700;transition:opacity .25s}
+.dm-load.off{opacity:0;pointer-events:none}
+.dm-load i{width:34px;height:34px;border-radius:50%;border:4px solid #d5deef;border-top-color:#1f6bff;animation:dmspin .8s linear infinite;margin-right:12px}
+@keyframes dmspin{to{transform:rotate(360deg)}}
+html.dm-lock{overflow:hidden}
+@media(max-width:700px){.dm-bar{gap:8px}.dm-title{flex-basis:100%;order:-1}.dm-btn{padding:0 12px}.dm[data-view=m] .dm-frame{max-width:100%;border:0;border-radius:0}}
+@media(prefers-reduced-motion:reduce){.dm,.dm-bar,.dm-stage,.dm-frame{transition:none}.dm-load i{animation:none}}

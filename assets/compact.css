@@ -1,0 +1,68 @@
+/* 여백 줄이기 — 두 사이트 공통. 맨 마지막에 읽혀 앞선 큰 여백을 눌러 줍니다. 되돌리려면 이 파일을 비우십시오. */
+.section{padding:clamp(22px,3vw,36px) 0}
+.section.tight{padding-top:4px}
+.page-head{padding-block:22px 16px!important}
+.page-head h1{margin-bottom:.25em}
+.page-head .lead,.page-head p:last-child{margin-bottom:0}
+h2{margin-bottom:12px}
+p{margin-bottom:.8em}
+.eyebrow{margin-bottom:.5em}
+.cta-row{margin:18px 0}
+.grid3,.grid2,.grid4{gap:14px}
+.split{gap:22px}
+.card{padding:18px 20px}
+.step{margin-bottom:8px}
+.note{padding:14px 18px;margin:16px 0}
+.area-grid{margin-top:16px;gap:12px}
+.area-card{padding:14px 16px}
+.area-block{margin-bottom:26px}
+.item-list,.what-list{gap:10px}
+.trust-grid{padding:14px 0;gap:12px}
+.cta-band{padding:24px 0!important}
+.cta-band .wrap{gap:14px}
+.unit-nav{padding-block:14px 22px}
+.unit-nav button{min-height:52px;padding:8px 18px}
+.device{margin:16px 0}
+.hero{padding-block:22px 26px!important}
+.hero .hook{margin-top:12px}
+.hook-counter{margin-top:14px;padding:9px 16px}
+.vendor-chips{margin:12px 0}
+.section .hero-copy,.hero .hero-copy{gap:9px}
+.cta-row+*{margin-top:0}
+/* 첫 화면 3장 */
+.hs-slide{min-height:clamp(430px,58vh,520px)!important}
+.hs-in{padding-block:26px 74px!important;gap:20px 40px!important}
+.hs-copy{gap:10px}
+.hs-card{padding:14px}
+.hs-phone div.scr{min-height:290px}
+.hs-under{padding-block:12px!important}
+/* 바닥 */
+.site-footer,footer{padding-block:22px 18px!important}
+.foot-grid,.site-footer .wrap{gap:12px}
+@media(max-width:700px){
+  .section{padding:20px 0}
+  .page-head{padding-block:16px 12px!important}
+  .hs-slide{min-height:0!important}
+  .hs-in{padding-block:22px 80px!important;gap:16px!important}
+  .card{padding:15px 16px}
+  .cta-band{padding:20px 0!important}
+  .stage-tab{min-height:40px}
+}
+/* 3번째(어두운) 장은 글이 길어 가장 높습니다 — 제목을 조금 줄여 첫 화면 전체 높이를 낮춥니다 */
+.hs-slide[data-net] .hs-copy h1,.hs-slide[data-net] .hs-copy h2.hs-h{font-size:clamp(1.7rem,3.3vw,2.5rem)!important}
+.hs-slide[data-net] .hs-copy{gap:8px}
+.hs-slide[data-net] .hs-claim{padding:10px 16px;line-height:1.55}
+.hs-slide[data-net] .hs-sub{line-height:1.65}
+@media(max-width:700px){.hs-slide[data-net] .hs-copy h1,.hs-slide[data-net] .hs-copy h2.hs-h{font-size:clamp(1.55rem,7vw,1.9rem)!important}}
+.hs-points{gap:7px}.hs-points li{padding:9px 14px;line-height:1.5}
+.hs-map{gap:8px}.hs-map div{padding:9px 12px}
+/* 뒤로 가기 단추(하위 화면 맨 위) */
+.back-row{padding-block:10px 0}
+.back-btn{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border:2px solid var(--accent);border-radius:999px;background:#fff;color:var(--accent);font-weight:800;font-size:.95rem;text-decoration:none}
+.back-btn:hover{background:var(--accent);color:#fff}
+.back-btn:focus-visible{outline:3px solid #ffb703;outline-offset:2px}
+/* 하단 사업자 정보(휴대폰에서도 한 줄씩 보이게) */
+.co-rows{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:4px 20px;font-size:.88rem;color:var(--dim)}
+.co-rows li{display:flex;gap:8px;min-width:0}.co-rows b{flex:none;color:var(--ink);font-weight:700}.co-rows span{min-width:0;overflow-wrap:anywhere}
+@media(max-width:560px){.co-rows{grid-template-columns:1fr}.foot-links{display:grid;grid-template-columns:1fr 1fr;gap:2px 14px}.foot-links a{display:inline-block;padding:7px 0}}
+.hs-sky .hs-claim{padding:10px 16px}
