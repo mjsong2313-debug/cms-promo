@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;700;900&display=swap");
+/* smooth.css — 스크롤이 끊기는 원인 제거(2026-10-24).
+   1) 첫 화면 테두리 회전(@property 애니메이션)은 매 프레임 다시 그려서 스크롤과 같이 돌면 끊긴다 → 스크롤 중·화면 밖·휴대폰에서는 멈춘다.
+   2) 머리글·하단 띠의 흐림(backdrop-filter)은 뒤 화면이 움직일 때마다 다시 계산한다 → 휴대폰에서는 단색으로.
+   3) 스크롤 중에는 장식 애니메이션(깜빡임·맥박)도 잠시 멈춘다. */
+html.sc .win::before,html.sc .cur::after,html.sc .phone[data-s="3"] .scr-bot button,html.sc .hs-phone .send,html.sc .hs-float,html.sc .hs-slide{animation-play-state:paused!important}
+.win.off::before{animation-play-state:paused!important}
+.hd,.site-header{backdrop-filter:saturate(1.4) blur(8px);-webkit-backdrop-filter:saturate(1.4) blur(8px)}
+@media(max-width:900px),(pointer:coarse){
+  .hd,.site-header,.dock,.v2-cta,.stage-bar,.dbg-chips,.v2-nav::before{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+  .hd{background:var(--navy,#0b1220)!important}
+  .site-header{background:#071224!important}
+  .win::before{animation:none!important}
+}
+@media(prefers-reduced-motion:reduce){.win::before{animation:none!important}}
+
+/* 4) 스크롤 중에는 마우스 아래 카드의 마우스 올림 효과(그림자·확대·빛)가 다시 그려지지 않게 한다 */
+html.sc body{pointer-events:none}
+/* 5) 나타나기 효과를 짧고 가볍게: 이동 거리 14px, 0.45초, 지연은 최대 4번째까지 */
+html.js .rv{transform:translateY(14px);transition:opacity .45s var(--ease),transform .45s var(--ease);transition-delay:calc(min(var(--i,0),4)*50ms)}
+html.js .rv.in{transform:none}
+/* 6) 값이 바뀔 때마다 배경 전체를 다시 그리는 게이지 애니메이션은 쓰지 않는다(값은 그대로 표시) */
+html.js .gauge{transition:none}
+
+/* 7) 접속 팝업이 열려 있는 동안: 뒤 화면 흐림·장식 애니메이션을 끈다(팝업 안 글을 내릴 때 끊기던 원인).
+      ※ 팝업 자신의 등장 동작은 건드리지 않는다(전부 멈추는 선택자는 팝업이 투명하게 굳는 사고를 냈다). */
+.pp-ov{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:rgba(14,24,46,.80)!important}
+body:has(.pp-ov) .win::before,body:has(.pp-ov) .cur::after,body:has(.pp-ov) .phone[data-s="3"] .scr-bot button,body:has(.pp-ov) .hs-phone .send,body:has(.pp-ov) .hs-float,body:has(.pp-ov) .hs-slide{animation-play-state:paused!important}
+body:has(.pp-ov) .hd,body:has(.pp-ov) .site-header{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+
+/* 8) 휴대폰: 크게 번지는 그림자는 타일을 다시 그릴 때 가장 비싸다 → 얇은 그림자로 */
+@media(max-width:900px),(pointer:coarse){
+  .cd,.win,.panel,.rep,.endbox,.dsg-card,.bridge,.faq details,.steps li{box-shadow:0 1px 0 rgba(255,255,255,.06) inset!important}
+  html.js .rv{transition-duration:.3s}
+}
+
+/* 9) 휴대폰 '가벼운 화면'(2026-10-24): 손가락으로 내릴 때 끊기지 않도록 스크롤과 같이 움직이는 장식을 모두 걷어 낸다.
+      - 나타나기 효과: 스크롤하다 요소가 하나씩 튀어나오는 것 자체가 끊겨 보인다 → 처음부터 보이게 한다.
+      - 위쪽 진행 막대(.pg)·부드러운 스크롤·번짐 필터를 끈다. */
+@media(max-width:900px),(pointer:coarse){
+  html{scroll-behavior:auto!important}
+  html.js .rv,html.js .rv.in{opacity:1!important;transform:none!important;transition:none!important}
+  .pg{display:none!important}
+  *,*::before,*::after{filter:none!important}
+  .tablist,.dsg-grid{scroll-behavior:auto!important}
+  body{overscroll-behavior-y:none}
+}
+
+/* 메뉴로 이동할 때 위쪽 빈칸 제거: 섹션 안쪽 여백만큼 당겨 올려 제목이 헤더 바로 아래에 오게 한다 */
+.sec[id]{scroll-margin-top:calc(1px - clamp(72px,9vw,128px))}
+
+/* PC 화면 2차: 메뉴로 이동했을 때 한 구역이 한 화면에 최대한 들어오게 여백·글자를 줄인다 */
+@media (min-width:981px){
+  .sec[id]{padding-block:14px 22px;scroll-margin-top:-22px}
+  .sec[id]>.wrap{zoom:.8}
+  .sec[id] .head{margin-bottom:16px}
+  .sec[id] h2{margin-top:6px;font-size:clamp(1.5rem,2.6vw,2.1rem)}
+  .sec[id] .head p{margin-top:8px;font-size:.98rem}
+  .sec[id] .bento{gap:10px}
+  .sec[id] .bento>*{padding:16px 18px}
+  .sec[id] .stats{margin-bottom:14px}.sec[id] .stats>div{padding:12px 16px}
+  .sec[id] .stats b{font-size:2rem}
+  .sec[id] .note{margin-top:10px;padding:10px 14px}
+  .sec[id] .rep-top{padding:12px 20px}.sec[id] .rep-foot{padding:10px 20px}
+  .sec[id] .steps{gap:10px}.sec[id] .steps>li{padding:16px 16px;gap:6px}
+  .sec[id] .faq{gap:6px}.sec[id] .faq summary{min-height:46px;padding:8px 18px}
+}
+/* 보고서 구역: 글자는 키우고 안쪽 간격을 줄여 한 화면에 맞춘다 */
+@media (min-width:981px){
+  #report>.wrap{zoom:1}
+  #report .gauge{width:72px;height:72px}#report .gauge::before{inset:6px}#report .gauge b{font-size:1.15rem}#report .gauge small{bottom:14px}
+  #report .rep-top{padding:8px 18px;gap:14px}
+  #report .areas{padding:10px 18px;gap:4px}
+  #report .fails{padding:10px 18px;gap:6px}
+  #report .fl{padding:7px 12px;gap:3px}
+  #report .rep-foot{padding:8px 18px}
+  #report .head{margin-bottom:10px}
+}
+
+@media (min-width:981px){#scope .tablist{gap:4px}#scope .tablist button{min-height:40px;padding:4px 12px}#scope .tablist button b{width:26px;height:26px}#scope .stats>div{padding:8px 16px}#scope .head{margin-bottom:10px}}
+
+/* 모바일: 인라인으로 3열 지정된 카드를 1열로 */
+@media(max-width:700px){.cd[style*="repeat(3"]{grid-template-columns:1fr!important;gap:14px!important}}
+
+/* ===== 0000 스킨: 공공기관 시험판(0000 로고·색)에 맞춤 — 파일 맨 끝에 붙여 앞의 규칙을 덮는다 ===== */
+:root,:root[data-site]{
+  --ink:#08111f;--paper:#f4f5f0;--paper2:#e9ece6;--lime:#caff5b;--blue:#2f7df4;--cyan:#49d7ed;
+  --navy:#08111f;--navy2:#0e1b2c;--navy3:#16273b;--on-dark:#eef3f6;--on-dark-dim:#a9bac6;
+  --bg:#f4f5f0;--bg2:#e9ece6;--surface:#ffffff;
+  --line:#08111f1f;--line2:#08111f38;
+  --accent:#2f7df4;--accent2:#49d7ed;--accent-soft:color-mix(in srgb,#2f7df4 10%,#fff);
+  --font:'Noto Sans KR','Malgun Gothic',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --c1:#2f7df4;--c2:#12a5bd;--c3:#1c63d6;--c4:#6a9a0a;--c5:#2a4a6b;--c6:#2f7df4;
+  --t1:#e8f0fe;--t2:#e3f6fa;--t3:#e6eefb;--t4:#f0f8dc;--t5:#e9eef4;--t6:#e8f0fe;
+}
+body{background:var(--paper);font-family:var(--font)}
+button,input,select,textarea{font-family:var(--font)}
+.mono,code,.eb,.brand small,.ih-brand small{font-family:var(--mono)}
+
+/* 로고: 막대 세 개(0000) */
+.brand svg,.ih-brand svg{display:none!important}
+.brand::before,.ih-brand::before{content:"";flex:none;width:32px;height:32px;border-radius:9px;transform:skewY(-7deg);background:
+  linear-gradient(#49d7ed,#49d7ed) 3px 19px/6px 10px no-repeat,
+  linear-gradient(#caff5b,#caff5b) 12px 12px/6px 17px no-repeat,
+  linear-gradient(#fff,#fff) 21px 5px/6px 24px no-repeat,
+  #08111f;box-shadow:0 0 0 1px #ffffff2e}
+.brand b,.ih-brand b{font-weight:900;letter-spacing:-.03em}
+
+/* 머리글 */
+.hd,.site-header{background:#08111fF0!important;border-bottom:1px solid #ffffff1a}
+.ih{--ih-navy:#08111f;--ih-navy2:#0e1b2c;--ih-acc:#caff5b;--ih-dim:#a9bac6}
+html[data-site=cms] .ih{--ih-acc:#caff5b}
+.ih-cta{background:#caff5b!important;color:#08111f!important}
+.ih-sw a[aria-current],.sitesw a[aria-current]{background:#caff5b;color:#08111f}
+.hd .nav a[aria-current],.hd .nav a:hover{color:#caff5b}
+
+/* 버튼: 형광 초록 바탕 + 검정 글자 */
+.btn{--bb:#caff5b;background:#caff5b;border-color:#caff5b;color:#08111f;box-shadow:none}
+.btn:hover{background:#d8ff82;color:#08111f}
+.btn.ghost,.btn-ghost{background:transparent;color:#fff;border:1px solid #ffffff59}
+.btn-ghost:hover{background:#ffffff1a;color:#fff}
+.btn.line{background:transparent;color:#08111f;border:1px solid #08111f40}
+.btn.line:hover{border-color:#08111f;background:transparent}
+.btn.white{--bb:#fff;background:#fff;color:#08111f;border-color:#fff}
+.page-head .btn-ghost,.section .btn-ghost,.cta-band .btn-ghost{color:#08111f;border-color:#08111f59}
+.page-head .btn-ghost:hover,.section .btn-ghost:hover{background:#08111f0f;color:#08111f}
+.pitch-go{background:#08111f!important;color:#caff5b!important;border:0;box-shadow:none}
+.pitch-go:hover{background:#16273b!important;color:#caff5b!important}
+
+/* 글자·강조 */
+.eb,.eyebrow{color:#2f7df4}
+.eb b{background:#e8f0fe;color:#2f7df4}
+:root[data-site] .hero .eb,.hero .eb,.sec.dark .eb,.bridge .eb,.endbox .eb,.hero .eyebrow,.hs-section .eb{color:#caff5b}
+.dark .eb b,.bridge .eb b{background:#ffffff1f;color:#caff5b}
+.hs-copy h1 em,.hs-copy .hs-h em,.hero h1 em,h1 em{background:linear-gradient(100deg,#49d7ed,#caff5b);-webkit-background-clip:text;background-clip:text;color:transparent}
+.page-head h1 em{background:none;color:#2f7df4;-webkit-text-fill-color:currentColor}
+main .section a:not(.btn):not(.btn-ghost):not(.card),.doc a{color:#2f7df4}main .section a:not(.btn):not(.btn-ghost):hover{color:#1c63d6}
+.brand,.ih-brand,.hd a,.ih a{color:inherit}
+
+/* 바탕 */
+.section.alt,.sec.alt{background:#e9ece6}
+:root[data-site] .page-head{background:var(--paper)}
+:root[data-site] .hero{background:#08111f}
+:root[data-site] .hero::after{background:none}
+:root[data-site] .hero h1 em{background:linear-gradient(100deg,#49d7ed,#caff5b);-webkit-background-clip:text;background-clip:text;color:transparent}
+:root[data-site] .logo-mark,:root[data-site] .brand-text strong{color:inherit}
+.sec.dark,.bridge,.endbox{background:#08111f}
+.cta-band{background:#08111f!important;color:#fff!important}
+.cta-band h2,.cta-band p{color:#fff!important}
+.cta-band .btn{background:#caff5b!important;color:#08111f!important}
+.pitch-band{background:#caff5b;border-color:#08111f1f}
+.pitch-band .pb-k{color:#08111f;opacity:.7}.pitch-band p,.pitch-band h2{color:#08111f}
+.pitch-first,.first-line{background:#fff;border-left-color:#08111f}
+.note{background:#fff;border-left-color:#2f7df4}
+.warnbox{background:#fff6e0;border-left-color:#d98a06}
+.card,.item,.faq details,.flow li,.cd{background:#fff}
+.card{border-top-color:#2f7df4}
+.step,.area-letter{background:#e8f0fe;color:#2f7df4}
+.item-id{background:#e8f0fe;color:#2f7df4}
+.chips a:hover,.chips a[aria-current=page]{color:#2f7df4;border-color:#2f7df4;background:#e8f0fe}
+:root[data-site] .site-footer,.site-footer{background:#08111f;color:#a9bac6;border-top:0}
+.site-footer .muted,.site-footer .foot-links a,.site-footer .co-rows,.site-footer .small{color:#a9bac6}
+.site-footer .foot-brand{color:#fff}
+.site-footer .foot-links a:hover{color:#caff5b}
+.foot-brand{display:flex;align-items:center;gap:10px}
+.foot-brand::before{content:"";flex:none;width:26px;height:26px;border-radius:7px;transform:skewY(-7deg);background:
+  linear-gradient(#49d7ed,#49d7ed) 2px 15px/5px 9px no-repeat,
+  linear-gradient(#caff5b,#caff5b) 10px 9px/5px 15px no-repeat,
+  linear-gradient(#fff,#fff) 17px 3px/5px 21px no-repeat,#08111f;box-shadow:0 0 0 1px #ffffff2e}
+input:focus,select:focus,textarea:focus{border-color:#2f7df4}
+.check-field input{accent-color:#2f7df4}
+.field b{background:#08111f;color:#caff5b}
+:focus-visible{outline-color:#2f7df4}
+::selection{background:#caff5b;color:#08111f}
+.hd a.btn,.hd a.btn:hover{color:#08111f}
+
+/* 추가: 팝업·로고 키움 */
+.brand::before,.ih-brand::before{width:38px;height:38px;border-radius:10px;background:
+  linear-gradient(#49d7ed,#49d7ed) 4px 23px/7px 12px no-repeat,
+  linear-gradient(#caff5b,#caff5b) 15px 14px/7px 21px no-repeat,
+  linear-gradient(#fff,#fff) 26px 5px/7px 30px no-repeat,#08111f}
+.brand b,.ih-brand b{font-size:1.12rem}
+.pp-dlg{border-top-color:#caff5b!important;background:#f4f5f0!important;color:#08111f!important}
+.pp-kicker{color:#2f7df4!important}
+.pp-go{background:#caff5b!important;color:#08111f!important;border-color:#08111f!important}
+.pp-go:hover{background:#d8ff82!important;color:#08111f!important;filter:none!important}
+.pp-cl{background:transparent!important;color:#08111f!important;border-color:#08111f55!important}
+.pp-x{border-color:#08111f!important;color:#08111f!important}
+.pp-ov{background:rgba(8,17,31,.72)!important}

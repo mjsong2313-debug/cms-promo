@@ -1,0 +1,23 @@
+/* 신문사 CMS 사이트: 점검 사이트와 한눈에 구별되도록 색 배열·머리글·첫 화면을 따로 쓴다 */
+:root[data-site="cms"]{
+  --bg:#fbfcff;--bg2:#f0f3ff;
+  --c1:#e5284b;--c2:#1f6bff;--c3:#c81e43;--c4:#0b4fd6;--c5:#0070c9;--c6:#d9480f;
+  --t1:#ffe8ed;--t2:#e6efff;--t3:#ffe6eb;--t4:#e1ebff;--t5:#e0f1ff;--t6:#fff0e4;
+  --accent:#e5284b;--tint:#ffe8ed;
+}
+:root[data-site="cms"] .site-header{background:#f7f8ffee}
+:root[data-site="cms"] .logo-mark{color:var(--c1)}
+:root[data-site="cms"] .brand-text strong{color:var(--c1)}
+:root[data-site="cms"] .hero{background:
+  radial-gradient(860px 520px at 92% -8%,#d9ccff 0,transparent 60%),
+  radial-gradient(700px 440px at -6% 108%,#ffd3e0 0,transparent 62%),
+  radial-gradient(620px 420px at 58% 114%,#cfe3ff 0,transparent 62%),
+  radial-gradient(480px 320px at 36% -14%,#ffe2c4 0,transparent 60%),var(--bg)}
+:root[data-site="cms"] .hero::after{background:linear-gradient(90deg,#fbfcfff2 0,#fbfcffb8 48%,transparent 100%)}
+:root[data-site="cms"] .hero h1 em{background:linear-gradient(90deg,var(--c1),var(--c2) 55%,var(--c3));-webkit-background-clip:text;background-clip:text;color:transparent}
+:root[data-site="cms"] .page-head{background:
+  radial-gradient(760px 280px at 88% 0,#d9ccff 0,transparent 70%),
+  radial-gradient(520px 240px at 4% 110%,#ffd9e6 0,transparent 70%),var(--bg)}
+:root[data-site="cms"] .site-footer{background:#eef0ff}
+:root[data-site="cms"] .xsite{border-color:color-mix(in srgb,var(--c4) 75%,#fff);background:#fff6ec}
+:root[data-site="cms"] .xsite small{color:var(--c4)}

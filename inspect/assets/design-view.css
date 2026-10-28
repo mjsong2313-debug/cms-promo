@@ -1,0 +1,63 @@
+/* 디자인 8종: 목록(design.html)과 큰 화면(design-*.html) */
+.dv-backrow{margin:0 0 14px}
+.dv-back{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 18px;border-radius:999px;border:2px solid var(--accent);color:var(--accent);background:#fff;font-weight:800;text-decoration:none;white-space:nowrap}
+.dv-back:hover{background:var(--accent);color:#fff}
+.dv-back:focus-visible,.dsg-card:focus-visible,.dv-tabs button:focus-visible,.dv-nav a:focus-visible{outline:3px solid #ffb703;outline-offset:2px}
+
+.dsg-grid{list-style:none;margin:22px 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.dsg-card{display:grid;gap:8px;align-content:start;height:100%;padding:12px 12px 16px;background:#fff;border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:10px;color:inherit;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.dsg-card:hover{transform:translateY(-4px);box-shadow:0 22px 34px -24px #14213d99;color:inherit}
+.dsg-card img{display:block;width:100%;height:auto;aspect-ratio:8/5;object-fit:cover;border-radius:6px;border:1px solid var(--line);background:#eef1f6}
+.dsg-t{display:grid;gap:2px}.dsg-t b{font-size:1.08rem}.dsg-t small{color:var(--dim)}
+.dsg-d{font-size:.9rem;color:var(--dim);line-height:1.55}
+.dsg-go{margin-top:4px;font-weight:800;color:var(--accent)}
+
+.dv-wrap{width:min(1760px,100% - 32px);margin-inline:auto}
+.dv-bar{position:sticky;top:var(--hh,64px);z-index:30;background:#fff;border-bottom:2px solid var(--accent);box-shadow:0 12px 24px -22px #14213d99}
+.dv-bar .dv-wrap{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;padding-block:10px}
+.dv-title{flex:1 1 220px;min-width:0;font-size:1.05rem}.dv-title small{display:block;font-weight:600;color:var(--dim);font-size:.82rem}
+.dv-tabs{display:flex;gap:6px}
+.dv-tabs button{min-height:44px;padding:0 14px;border-radius:999px;border:2px solid var(--line2);background:#fff;font-weight:800;cursor:pointer;color:var(--ink)}
+.dv-tabs button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.dv-nav{display:flex;gap:6px}
+.dv-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:999px;border:2px solid var(--line2);font-weight:800;text-decoration:none;color:var(--ink);background:#fff}
+.dv-nav a:hover{border-color:var(--accent);color:var(--accent)}
+.dv-body{padding-block:18px 40px;background:#eef1f7}
+.dv-cols{display:grid;gap:24px;align-items:start;grid-template-columns:minmax(0,1fr)}
+.dv-body[data-view="both"] .dv-cols{grid-template-columns:minmax(0,1fr) 430px}
+.dv-body[data-view="pc"] .dv-m,.dv-body[data-view="m"] .dv-pc{display:none}
+.dv-cap{margin:0 0 8px;font-weight:800;color:var(--accent)}
+.dv-pc img{display:block;width:100%;height:auto;border:1px solid var(--line2);background:#fff;box-shadow:0 24px 40px -30px #14213d99}
+.dv-m{min-width:0}
+.dv-phone{width:min(414px,100%);margin-inline:auto;padding:12px;border-radius:38px;background:#0b1b3b;box-shadow:0 30px 50px -26px #0b1b3bcc}
+.dv-scr{border-radius:26px;overflow:hidden;background:#fff}
+.dv-scr img{display:block;width:100%;height:auto}
+.dv-body[data-view="both"] .dv-m{position:sticky;top:calc(var(--hh,64px) + 78px)}
+.dv-body[data-view="both"] .dv-scr{height:calc(100vh - 210px);overflow:auto;overscroll-behavior:contain}
+.dv-body[data-view="m"] .dv-cols{justify-items:center}
+.dv-note{margin:22px 0 0;color:var(--dim);font-size:.9rem}
+.dv-others{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-top:18px}
+.dv-others ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.dv-others a{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line2);background:#fff;text-decoration:none;color:var(--ink);font-weight:700}
+.dv-others a[aria-current]{background:var(--accent);border-color:var(--accent);color:#fff}
+.dv-bottom{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+@media(max-width:1099px){.dv-tabs .dv-both{display:none}.dv-body[data-view="both"] .dv-cols{grid-template-columns:1fr}}
+@media(max-width:700px){.dv-bar{position:static}.dv-tabs,.dv-nav{width:100%}.dv-tabs button,.dv-nav a{flex:1;justify-content:center}.dv-back{width:100%;justify-content:center}}
+/* 여백 줄이기: 목록 카드 간격·휴대폰에서는 2열 */
+.dsg-grid{margin:14px 0;gap:14px}
+@media(max-width:700px){.dsg-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .dsg-card{padding:8px 8px 10px;gap:5px}.dsg-t b{font-size:.95rem}.dsg-t small{font-size:.76rem}
+ .dsg-d{display:none}.dsg-go{font-size:.86rem;margin-top:0}}
+
+.dsg-grid li{display:flex;flex-direction:column;gap:8px}.dsg-grid .dsg-card{flex:1}
+.dsg-live{display:flex;align-items:center;justify-content:center;min-height:46px;padding:0 16px;border-radius:999px;background:var(--accent);color:#fff;font-weight:800;text-decoration:none;text-align:center}
+.dsg-live:hover{filter:brightness(1.12);color:#fff}.dsg-live:focus-visible{outline:3px solid #ffb703;outline-offset:2px}
+.dv-live{white-space:nowrap}
+@media(max-width:700px){.dv-live{width:100%}}
+
+.dv-mtabs{display:flex;gap:8px;justify-content:center;margin:0 0 12px}
+.dv-mtabs button{min-height:40px;padding:0 16px;border-radius:999px;border:2px solid var(--accent);background:#fff;color:var(--accent);font:inherit;font-weight:800;cursor:pointer}
+.dv-mtabs button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.dv-mtabs button:focus-visible{outline:3px solid #ffb703;outline-offset:2px}
+.dv-scr[hidden]{display:none}
+.dv-mnote{max-width:414px;margin:12px auto 0;font-size:.88rem;color:var(--dim);line-height:1.6}

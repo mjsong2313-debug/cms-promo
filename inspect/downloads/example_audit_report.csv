@@ -1,0 +1,50 @@
+﻿항목ID,영역,항목,등급,판정,요약,근거
+A-01,A 크롤링·접근,robots.txt 응답,치명,경고,robots.txt는 열리지만 손볼 점이 있습니다.,구글이 무시하는 지시어 사용: crawl-delay
+A-02,A 크롤링·접근,기사·이미지·CSS·JS 경로 차단 여부,치명,실패,기사 주소 8건이 robots.txt로 막혀 구글봇이 읽지 못합니다.,/news/view.html?idxno=5 / /news/view.html?idxno=1001 / /news/view.html?idxno=1002 / /news/view.html?idxno=1003 / /news/view.html?idxno=1004 / …외 3건
+A-04,A 크롤링·접근,meta robots·X-Robots-Tag,치명,통과,홈과 기사 7건 모두 meta robots·X-Robots-Tag에 noindex가 없습니다.,
+A-05,A 크롤링·접근,봇 이름별 응답 차이,치명,미실시,검색봇 이름으로 요청해 보는 시험은 동의한 사이트에서만 하도록 기본 꺼져 있습니다(-simulate-bots로 켬).,
+A-06,A 크롤링·접근,방화벽·CDN 차단 응답,치명,통과,"받아 본 12건의 응답에서 차단 응답의 흔적(403·429, 차단 안내 문구)이 없었습니다.",
+A-07,A 크롤링·접근,서버 오류(5xx)·시간 초과,치명,통과,받아 본 12건 모두 5xx 오류·시간 초과가 없었습니다(일회성 측정).,
+A-08,A 크롤링·접근,HTTPS 인증서,치명,실패,사이트가 HTTPS가 아닌 http로 열립니다. 인증서가 없거나 https로 연결되지 않습니다.,
+A-09,A 크롤링·접근,HTTP→HTTPS·www 단일화,중요,통과,http/https·www 변형 1개가 모두 하나의 대표 주소(http://시험일보(가상)/)로 모입니다.,
+B-01,B URL·Canonical,canonical 존재·단일,중요,실패,"canonical이 없거나 2개 이상인 기사가 있습니다(없음 3건, 중복 0건 / 표본 7건).",http://시험일보(가상)/news/view.html?idxno=1002 / http://시험일보(가상)/news/view.html?idxno=1004 / http://시험일보(가상)/news/view.html?idxno=1006
+B-02,B URL·Canonical,canonical ↔ 요청 URL 일치,치명,실패,canonical이 다른 기사 번호나 홈을 가리키는 기사가 1건 있습니다(표본 4건).,http://시험일보(가상)/news/view.html?idxno=1003 → canonical http://시험일보(가상)/news/view.html?idxno=1999 (기사 번호 1003≠1999)
+B-05,B URL·Canonical,canonical 대상 URL 상태,치명,통과,canonical 대상 주소 4건이 모두 200이며 이동·noindex가 없습니다.,
+B-08,B URL·Canonical,리디렉션 체인·루프,중요,통과,받아 본 주소들에 이동 체인이 1단계를 넘는 경우나 루프가 없습니다.,
+C-01,C 오류·삭제 기사,없는 주소 요청 시 404,치명,실패,존재하지 않는 주소 3건 중 3건이 404/410이 아닌 응답을 돌려줍니다.,http://시험일보(가상)/__edgeaudit_nf_1__ → 없는 주소인데 200 응답(Soft 404) / http://시험일보(가상)/news/__edgeaudit_nf_2__.html → 없는 주소인데 200 응답(Soft 404) / http://시험일보(가상)/news/view.html?idxno=99999 → 없는 주소인데 200 응답(Soft 404)
+C-02,C 오류·삭제 기사,삭제 기사의 사이트맵·RSS 잔존,치명,실패,사이트맵·RSS에 오른 주소 2건 중 1건이 삭제됐거나 오류 문구가 보이는 페이지입니다.,[사이트맵] http://시험일보(가상)/news/view.html?idxno=5 → HTTP 200 존재하지 않는
+C-03,C 오류·삭제 기사,200 응답 + 오류 문구(Soft 404),치명,실패,200 응답인데 오류 안내로 보이는 페이지(Soft 404)가 4건 있습니다.,http://시험일보(가상)/news/view.html?idxno=5 → 200 응답인데 '존재하지 않는' 문구 / http://시험일보(가상)/__edgeaudit_nf_1__ → 없는 주소인데 200 / http://시험일보(가상)/news/__edgeaudit_nf_2__.html → 없는 주소인데 200 / http://시험일보(가상)/news/view.html?idxno=99999 → 없는 주소인데 200
+D-01,D 구조화 데이터,JSON-LD가 서버 HTML에 존재,치명,실패,서버가 보낸 HTML에 JSON-LD가 없는 기사가 있습니다(스크립트로 나중에 주입되면 구글이 놓칠 수 있음): 표본 7건 중 3건.,http://시험일보(가상)/news/view.html?idxno=1002 / http://시험일보(가상)/news/view.html?idxno=1004 / http://시험일보(가상)/news/view.html?idxno=1005
+D-02,D 구조화 데이터,기사 타입 적합성,중요,실패,기사 타입(NewsArticle 등) JSON-LD가 없는 기사가 있습니다: 표본 7건 중 5건.,http://시험일보(가상)/news/view.html?idxno=1002 / http://시험일보(가상)/news/view.html?idxno=1003 / http://시험일보(가상)/news/view.html?idxno=1004 / http://시험일보(가상)/news/view.html?idxno=1005 / http://시험일보(가상)/news/view.html?idxno=1006
+D-03,D 구조화 데이터,JSON-LD 문법·중복,치명,실패,JSON-LD 문법 오류가 있는 기사가 2건 있습니다. 구글이 구조화 데이터를 읽지 못합니다.,http://시험일보(가상)/news/view.html?idxno=1003 → JSON 문법 오류 1개 / http://시험일보(가상)/news/view.html?idxno=1006 → JSON 문법 오류 1개
+D-04,D 구조화 데이터,headline ↔ 화면 제목 일치,중요,통과,표본 기사 2건 모두 headline이 화면 제목과 일치합니다.,
+D-05,D 구조화 데이터,게시일·수정일 형식,치명,실패,게시일·수정일이 없거나 형식이 맞지 않는 기사가 2건 있습니다(표본 2건).,http://시험일보(가상)/news/view.html?idxno=1001 → datePublished '2026-10-03 04:49:40'가 시간대를 포함한 ISO 8601이 아님 / http://시험일보(가상)/news/view.html?idxno=1007 → datePublished '2026-10-02 22:49:40'가 시간대를 포함한 ISO 8601이 아님
+D-07,D 구조화 데이터,image 존재·접근성,치명,실패,JSON-LD image가 없거나 열리지 않는 기사가 있습니다: 표본 2건 중 2건.,http://시험일보(가상)/news/view.html?idxno=1001 → 이미지 http://시험일보(가상)/img/bad.jpg: HTTP 404 / http://시험일보(가상)/news/view.html?idxno=1007 → 이미지 http://시험일보(가상)/img/bad.jpg: HTTP 404
+D-09,D 구조화 데이터,author 이름,중요,경고,작성자가 '관리자'·'편집부'처럼 기자 실명이 아닌 기사가 2건 있습니다.,http://시험일보(가상)/news/view.html?idxno=1001 → 작성자 '관리자' / http://시험일보(가상)/news/view.html?idxno=1007 → 작성자 '관리자'
+D-10,D 구조화 데이터,author.url 연결 상태,중요,실패,"기자 프로필로 연결되지 않는 author.url이 있습니다(검색결과·목록·홈 2건, 열리지 않음 0건).",http://시험일보(가상)/news/view.html?idxno=1001 → author.url이 검색결과·목록 주소(http://시험일보(가상)/news/search.html?keyword=%EA%B4%80%EB%A6%AC%EC%9E%90) / http://시험일보(가상)/news/view.html?idxno=1007 → author.url이 검색결과·목록 주소(http://시험일보(가상)/news/search.html?keyword=%EA%B4%80%EB%A6%AC%EC%9E%90)
+D-11,D 구조화 데이터,publisher 정보 일관성,중요,통과,표본 기사 2건의 publisher가 '시험일보'로 일관되고 로고가 있습니다.,
+E-01,E 뉴스 사이트맵·RSS,뉴스 사이트맵 존재·선언,치명,실패,뉴스 사이트맵을 찾지 못했습니다.,일반 사이트맵은 있으나 news:news 태그가 든 뉴스 사이트맵은 없음
+E-02,E 뉴스 사이트맵·RSS,기간·건수 한도,중요,미실시,뉴스 사이트맵이 없어 점검하지 못했습니다(E-01 참조).,
+E-03,E 뉴스 사이트맵·RSS,필수 태그,치명,미실시,뉴스 사이트맵이 없어 점검하지 못했습니다(E-01 참조).,
+E-04,E 뉴스 사이트맵·RSS,사이트맵 URL 상태,치명,실패,사이트맵·RSS에 오른 주소 표본 2건 중 1건이 200 정상 응답이 아닙니다.,[사이트맵] http://시험일보(가상)/news/view.html?idxno=5 → 200이지만 '존재하지 않는' 문구(Soft 404)
+E-09,E 뉴스 사이트맵·RSS,RSS 유효성·최신성,중요,경고,RSS(또는 Atom) 피드를 찾지 못했습니다. 네이버·구글 모두 사이트맵을 우선하지만 RSS는 보조 수집 경로입니다.,
+F-01,F 본문·페이지 구조,서버 HTML에 본문 포함,치명,실패,서버가 보낸 HTML에 본문이 거의 없는 기사가 있습니다(화면에서 스크립트로 채우는 방식이면 구글이 놓칠 수 있음): 표본 7건 중 6건.,http://시험일보(가상)/news/view.html?idxno=1001 → 서버 HTML의 본문 49자 / http://시험일보(가상)/news/view.html?idxno=1002 → 서버 HTML의 본문 49자 / http://시험일보(가상)/news/view.html?idxno=1003 → 서버 HTML의 본문 49자 / http://시험일보(가상)/news/view.html?idxno=1004 → 서버 HTML의 본문 49자 / http://시험일보(가상)/news/view.html?idxno=1005 → 서버 HTML의 본문 49자 / …외 1건
+F-02,F 본문·페이지 구조,제목·게시시간 탐지 가능 위치,중요,통과,표본 기사 7건 모두 제목과 게시시간을 기계가 읽을 수 있는 위치에 두고 있습니다.,
+F-03,F 본문·페이지 구조,title·h1·기사 제목 일치,중요,통과,표본 기사 7건 모두 title·h1이 일치하고 h1이 1개입니다.,
+F-07,F 본문·페이지 구조,섹션 페이지의 기사 링크 방식,치명,실패,섹션 페이지 1건 중 1건에서 기사 링크가 일반 HTML 링크가 아닙니다. 구글이 기사로 따라가지 못할 수 있습니다.,"http://시험일보(가상)/news/list.html?sc_section_code=S1N1 → 기사 HTML 링크 0개, 스크립트 이동 5개"
+F-09,F 본문·페이지 구조,언어·문자셋 선언,중요,통과,점검한 8개 페이지 모두 언어(lang)와 문자셋이 선언되어 있습니다.,
+G-01,G 이미지·미디어,og:image 존재·접근,중요,실패,og:image가 없는 기사가 있습니다: 표본 7건 중 7건.,http://시험일보(가상)/news/view.html?idxno=1001 / http://시험일보(가상)/news/view.html?idxno=1002 / http://시험일보(가상)/news/view.html?idxno=1003 / http://시험일보(가상)/news/view.html?idxno=1004 / http://시험일보(가상)/news/view.html?idxno=1005 / …외 2건
+G-05,G 이미지·미디어,이미지 깨짐 비율,중요,통과,확인한 이미지 1건 모두 정상으로 열립니다.,
+H-01,H 모바일·속도,viewport·모바일 렌더,중요,실패,viewport(width=device-width)가 선언되지 않은 페이지가 8건 있습니다. 모바일 화면에 맞춰지지 않습니다.,홈 / http://시험일보(가상)/news/view.html?idxno=1001 / http://시험일보(가상)/news/view.html?idxno=1002 / http://시험일보(가상)/news/view.html?idxno=1003 / …외 4건 / 가로 스크롤 여부는 실제 화면 렌더링이 필요해 이번 점검에서는 확인하지 않았습니다.
+I-01,I 신뢰·법령 표시,신문법 필수 표시,치명,실패,신문법상 표시 사항으로 보이는 항목이 홈·회사소개에서 대부분 보이지 않습니다.,"보이지 않은 항목: 등록번호, 등록(연월)일, 발행인, 편집인, 주소, 전화 / 반자동 점검: 단어 유무만 봅니다. 눈에 띄는 위치에 표시됐는지, 내용이 실제와 같은지는 사람이 확인해야 합니다."
+I-02,I 신뢰·법령 표시,회사소개·연락처·광고문의,중요,실패,"홈에서 찾을 수 없는 항목: 회사소개, 광고문의, 연락처",회사소개: 링크 없음 / 광고문의: 링크 없음 / 연락처: 링크 없음
+I-03,I 신뢰·법령 표시,기자 프로필 페이지,중요,실패,"기자 프로필·소개 페이지로 가는 링크를 홈에서 찾지 못했고, 기사 작성자도 개별 프로필로 연결되지 않습니다.",
+I-04,I 신뢰·법령 표시,기사 내 기자명·연락처 표기,중요,통과,표본 기사 7건 모두 기자명과 이메일 연락처가 표기되어 있습니다.,
+I-05,I 신뢰·법령 표시,윤리강령·편집규약 게시,중요,경고,홈·회사소개에서 윤리강령·편집규약 링크를 찾지 못했습니다.,반자동 점검: 링크 유무만 봅니다. 게시된 내용이 실제 강령인지는 사람이 확인해야 합니다.
+I-06,I 신뢰·법령 표시,정정·반론 보도 영역,중요,통과,기사 하단 등에 정정·반론 관련 안내 문구가 있습니다.,http://시험일보(가상)/news/view.html?idxno=1001 / 반자동 점검: 링크·문구 유무만 봅니다. 실제 접수 절차가 있는지는 사람이 확인해야 합니다.
+I-07,I 신뢰·법령 표시,개인정보 처리방침,중요,실패,홈에서 개인정보 처리방침 링크를 찾지 못했습니다.,
+J-01,J 보안·도메인,혼합 콘텐츠,중요,해당없음,사이트가 https가 아니어서 혼합 콘텐츠 점검 대상이 아닙니다(A-08 참조).,
+J-04,J 보안·도메인,도메인 만료일,치명,미실시,도메인 만료일 조회(RDAP)를 끄고 실행했습니다.,
+K-01,K 네이버·다음·AI 검색,서치어드바이저 등록·소유확인,중요,수동확인,서치어드바이저 등록·소유확인은 로그인해야 볼 수 있어 자동으로 확인할 수 없습니다. 담당자가 서치어드바이저 화면에서 직접 확인하세요.,
+K-02,K 네이버·다음·AI 검색,Yeti(네이버 봇) 허용,치명,실패,robots.txt가 네이버봇(Yeti)에게 사이트 전체를 막고 있습니다.,
+K-04,K 네이버·다음·AI 검색,검색·공유용 메타(og:title·description·image),중요,실패,og:title·description·image 중 2개 이상이 없는 기사가 있습니다: 표본 7건 중 7건.,"http://시험일보(가상)/news/view.html?idxno=1001 → og:title, og:description, og:image 없음 / http://시험일보(가상)/news/view.html?idxno=1002 → og:title, og:description, og:image 없음 / http://시험일보(가상)/news/view.html?idxno=1003 → og:title, og:description, og:image 없음 / http://시험일보(가상)/news/view.html?idxno=1004 → og:title, og:description, og:image 없음 / http://시험일보(가상)/news/view.html?idxno=1005 → og:title, og:description, og:image 없음 / …외 2건"

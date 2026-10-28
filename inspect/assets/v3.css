@@ -1,0 +1,68 @@
+/* v3: 최신형 스타일 (89차) — 두 홈 전용. 문구는 그대로, 짜임과 모양만 바꾼다. */
+:root{--r:20px;--ease:cubic-bezier(.2,.7,.2,1)}
+body{font-feature-settings:"ss01","cv11";-webkit-font-smoothing:antialiased}
+
+/* 머리글: 얇고 투명하게 */
+.site-header{background:color-mix(in srgb,var(--bg) 82%,transparent)!important;backdrop-filter:saturate(1.4) blur(14px);box-shadow:0 1px 0 var(--line)!important}
+.site-header::after{height:2px!important;opacity:.9}
+
+/* 첫 화면: 큰 글자 + 은은한 빛 번짐 */
+.hs-section{position:relative;isolation:isolate;overflow:hidden;background:var(--bg)!important}
+.hs-section::before{content:"";position:absolute;inset:-20% -10% auto -10%;height:120%;z-index:-1;pointer-events:none;
+  background:radial-gradient(45% 40% at 78% 8%,color-mix(in srgb,var(--c1) 22%,transparent),transparent 70%),radial-gradient(40% 36% at 12% 30%,color-mix(in srgb,var(--c2) 14%,transparent),transparent 70%);filter:blur(8px)}
+.hs-section::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;
+  -webkit-mask-image:radial-gradient(70% 60% at 50% 20%,#000,transparent 80%);mask-image:radial-gradient(70% 60% at 50% 20%,#000,transparent 80%)}
+.hs-copy h1,.hs-copy h2.hs-h{font-size:clamp(2rem,4.3vw,3.5rem)!important;line-height:1.12!important;letter-spacing:-.04em!important}
+.hs-copy h1 em,.hs-copy .hs-h em{background:linear-gradient(100deg,var(--c1),var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hs-btn{border-radius:14px!important;min-height:54px;transition:transform .2s var(--ease),box-shadow .2s}
+.hs-btn:hover{transform:translateY(-2px)}
+
+/* 바로 가기 / 신뢰 띠 */
+.v2-quick{padding-top:20px}
+.v2-quick a{border-radius:var(--r);background:var(--surface)}
+.trust{background:transparent!important;border:0!important;padding:20px 0 0!important}
+.trust-grid{display:flex!important;flex-wrap:wrap;gap:10px 12px!important}
+.trust-grid>li{background:var(--surface)!important;color:var(--ink)!important;border:1px solid var(--line)!important;border-radius:999px!important;padding:8px 16px!important;flex:0 1 auto}
+.trust-grid>li strong{font-size:.92rem;color:var(--ink)}
+.trust-grid>li span,.trust-grid>li p{display:none}
+.trust-grid>li strong::before{width:18px;height:18px;font-size:.7rem;margin-right:7px}
+
+/* 구간: 여백 크게, 회색 바탕 줄이기 */
+.section{padding-block:clamp(64px,9vw,120px)!important;background:transparent!important}
+.section.alt{background:linear-gradient(180deg,color-mix(in srgb,var(--bg2) 70%,transparent),transparent)!important}
+.section>.wrap>.eyebrow,.eyebrow{display:inline-flex;align-items:center;padding:5px 12px;border-radius:999px;border:1px solid var(--line2);background:var(--surface);font-size:.78rem;letter-spacing:.06em;color:var(--dim)}
+.section>.wrap>h2{font-size:clamp(1.7rem,4.2vw,2.8rem)!important;line-height:1.18;letter-spacing:-.035em;border:0!important;padding:0!important;max-width:22em}
+.lead-sm{font-size:clamp(1rem,1.5vw,1.15rem);color:var(--dim);max-width:46em}
+
+/* 카드: 얇은 선, 큰 모서리, 마우스 따라 빛 */
+.card{border:1px solid var(--line)!important;border-top:1px solid var(--line)!important;border-radius:var(--r)!important;background:var(--surface)!important;box-shadow:0 1px 0 #fff inset,0 18px 40px -34px #14213d88!important;position:relative;overflow:hidden;transition:transform .25s var(--ease),border-color .25s,box-shadow .25s}
+.card::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .25s;background:radial-gradient(360px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--accent) 14%,transparent),transparent 60%)}
+.card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 50%,var(--line))!important}
+.card:hover::before{opacity:1}
+.grid3,.grid4,.grid2{gap:14px!important}
+
+/* 접는 상자: 핵심만 보이고 자세한 것은 눌러서 */
+.fold{margin-top:22px;border:1px solid var(--line);border-radius:var(--r);background:color-mix(in srgb,var(--surface) 88%,transparent)}
+.fold>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:12px 20px;font-weight:700;color:var(--ink);border-radius:var(--r)}
+.fold>summary::-webkit-details-marker{display:none}
+.fold>summary::after{content:"+";flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--bg);font-size:1.15rem;line-height:1;transition:transform .25s var(--ease)}
+.fold[open]>summary::after{transform:rotate(45deg)}
+.fold>summary:hover{background:color-mix(in srgb,var(--accent) 6%,transparent)}
+.fold>summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.fold-body{padding:4px 20px 22px;display:grid;gap:18px}
+.fold-body .reveal,.fold-body .anim{opacity:1!important;transform:none!important}
+.fold-body>h2{font-size:clamp(1.3rem,3vw,1.8rem)!important;margin:0}
+
+/* 디자인 10종: 가로로 넘기는 카드 띠 */
+.dsg-grid{display:flex!important;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 18px;margin-inline:-2px;scrollbar-width:thin}
+.dsg-grid>li{flex:0 0 min(78vw,340px);scroll-snap-align:start}
+.dsg-card{border-radius:var(--r)!important}
+
+/* 끝 신청 띠 */
+.cta-band{background:var(--ink)!important;color:var(--bg)!important;border-radius:28px;margin:0 clamp(12px,3vw,32px) 40px}
+.cta-band *{color:inherit}
+.cta-band .btn{background:var(--bg)!important;color:var(--ink)!important}
+
+@media(max-width:700px){.section{padding-block:56px!important}.hs-copy h1,.hs-copy h2.hs-h{font-size:clamp(1.9rem,9vw,2.6rem)!important}}
+@media(prefers-reduced-motion:reduce){.card,.hs-btn{transition:none}.card:hover{transform:none}}

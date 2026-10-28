@@ -1,0 +1,35 @@
+/* inner4: 안쪽 페이지를 새 홈(home4)과 맞추는 덧입힘. v3.css 뒤에 불러온다. */
+:root{--navy:#060a15;--navy2:#0d1425;--on-dark:#eef2fb;--on-dark-dim:#a9b4cc;--accent2:#7c5cff}
+html[data-site=cms]{--accent:#d93a26;--accent2:#ff8a3d}
+body{background:#f5f6fa}
+.site-header{background:color-mix(in srgb,#060a15 94%,transparent)!important;backdrop-filter:saturate(1.6) blur(16px);box-shadow:none!important;border-bottom:1px solid #ffffff14!important;color:var(--on-dark)}
+.site-header::after{display:none!important}
+.site-header .brand,.site-header .brand strong,.site-header .brand-text{color:#fff}
+.site-header .brand small{color:var(--on-dark-dim)}
+.site-header .logo-mark{color:#fff}
+.sitesw{background:#ffffff0d!important;border-color:#ffffff26!important}
+.sitesw a{color:var(--on-dark-dim)!important}.sitesw a:hover{color:#fff!important}
+.sitesw a[aria-current=page]{background:#fff!important;color:#060a15!important;box-shadow:none!important}
+.site-header .menu summary{border-color:#ffffff26;color:#fff;background:transparent}
+.site-header .menu .bars,.site-header .menu .bars::before,.site-header .menu .bars::after{background:#fff}
+.site-header .menu nav{background:#0d1425;border:1px solid #ffffff22;border-radius:18px;box-shadow:0 30px 60px -20px #000c}
+.site-header .menu nav a{color:var(--on-dark)}
+.site-header .menu nav a:hover{background:#ffffff14}
+@media(min-width:981px){.site-header .menu nav a{color:var(--on-dark-dim)}.site-header .menu nav a[aria-current=page],.site-header .menu nav a:hover{color:#fff;background:#ffffff14}}
+.back-btn{border-radius:999px}
+.page-head{position:relative;isolation:isolate;overflow:hidden;background:#060a15!important;color:var(--on-dark);border:0!important;padding-block:clamp(40px,6vw,80px)!important}
+.page-head,html .page-head::before{background-image:none!important}
+html .page-head::before{content:"";position:absolute;inset:-20% -10% auto;height:150%;z-index:-1;background:radial-gradient(40% 40% at 85% 10%,color-mix(in srgb,var(--accent) 42%,transparent),transparent 70%),radial-gradient(34% 34% at 8% 40%,color-mix(in srgb,var(--accent2) 26%,transparent),transparent 70%)!important;filter:blur(12px)}
+.page-head h1{color:#fff;font-size:clamp(2rem,4.6vw,3.4rem);letter-spacing:-.045em;line-height:1.12}
+.page-head .lead,.page-head p{color:var(--on-dark-dim)}
+.page-head .eyebrow{background:#ffffff14!important;color:#fff!important;border:1px solid #ffffff2b!important}
+.back-row{background:#060a15;box-shadow:0 0 0 100vmax #060a15;clip-path:inset(0 -100vmax);padding-top:12px;position:relative;z-index:1}.back-row .back-btn{background:#ffffff12;border-color:#ffffff33;color:#fff}
+.card{border-radius:22px!important;box-shadow:0 24px 50px -40px #0a102099}
+.btn{border-radius:14px}
+.cta-band{background:#060a15!important;color:#fff;border:0!important;position:relative;isolation:isolate;overflow:hidden}
+.cta-band::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(50% 90% at 80% 120%,color-mix(in srgb,var(--accent) 55%,transparent),transparent 70%)}
+.cta-band h2,.cta-band h3,.cta-band strong{color:#fff;border-color:#ffffff33}
+.cta-band p,.cta-band small,.cta-band .muted{color:var(--on-dark-dim)}
+.site-footer{background:#060a15!important;color:var(--on-dark-dim)!important;border-top:1px solid #ffffff12!important}
+.site-footer a{color:var(--on-dark)!important}.site-footer .foot-brand,.site-footer b{color:#fff}
+@media print{.site-header,.cta-band{display:none}}
