@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://mjsong2313-debug.github.io/cms-promo/inspect/sitemap.xml
