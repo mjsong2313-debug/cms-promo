@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>사이트 점검 엔진 — 접속 팝업</title><meta name="robots" content="noindex">
+<style>html,body{margin:0;height:100%;background:#0a1020;color:#cfe0ff;font-family:'Noto Sans KR',system-ui,sans-serif}
+.again{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);padding:16px 26px;border-radius:14px;border:1px solid #3a5288;background:#16254a;color:#fff;font:800 16px/1 inherit;cursor:pointer}
+.cap{position:fixed;left:0;right:0;bottom:18px;text-align:center;font-size:13px;color:#8fa3cc}</style></head>
+<body><button class="again" type="button" onclick="vpOpen()">팝업 다시 보기</button><p class="cap">사이트 점검 엔진 — 접속 팝업</p>
+<!-- 접속 팝업 단독 코드. 이 폴더째 올리면 열린다. 영상은 assets/video/ 에 있다. 붙여 쓸 때는 <style>·<div class="vp-ov">·<script> 세 덩어리를 페이지 </body> 앞에 넣는다. -->
+<style>
+.vp-ov{position:fixed;inset:0;z-index:2147483000;display:flex;align-items:center;justify-content:center;padding:14px;background:rgba(4,6,12,.86);font-family:'IBM Plex Sans KR','Noto Sans KR',system-ui,sans-serif}
+.vp-ov[hidden]{display:none}
+.vp-dlg{position:relative;width:min(100%,430px);max-height:100%;display:grid;gap:12px;background:#0f1a33;color:#fff;border:1px solid #243a68;border-top:4px solid #5b9bff;border-radius:22px;padding:16px 16px 18px;box-shadow:0 30px 80px -20px #000}
+.vp-x{position:absolute;right:8px;top:8px;width:44px;height:44px;border-radius:50%;border:1px solid #243a68;background:#0c1220;color:#fff;font:700 22px/1 inherit;cursor:pointer;display:grid;place-items:center;z-index:2}
+.vp-x:hover{background:#5b9bff;border-color:#5b9bff}
+.vp-eb{padding-right:52px;color:#38e1ff;font-weight:700;font-size:13px;letter-spacing:.08em}
+.vp-dlg h2{margin:0;padding-right:52px;font-size:1.15rem;font-weight:900;line-height:1.35}
+.vp-media{position:relative}
+.vp-dlg video{display:block;width:100%;max-height:min(62vh,640px);aspect-ratio:9/16;object-fit:contain;background:#050810;border-radius:10px}
+.vp-hint{position:absolute;left:50%;top:14px;transform:translateX(-50%);z-index:3;max-width:calc(100% - 24px);padding:9px 16px;border-radius:99px;background:#ffc23d;color:#111;font:800 13.5px/1.3 inherit;text-align:center;box-shadow:0 10px 30px -8px #000;pointer-events:none;animation:vpPulse 1.4s ease-in-out infinite}
+.vp-hint[hidden]{display:none}
+@keyframes vpPulse{50%{transform:translateX(-50%) scale(1.05)}}
+.vp-acts{display:flex;gap:10px;flex-wrap:wrap}
+.vp-acts a,.vp-acts button{flex:1 1 150px;min-height:48px;padding:0 20px;border-radius:14px;font:800 15px/1 inherit;display:grid;place-items:center;text-decoration:none;cursor:pointer}
+.vp-acts a{background:#2f6bff;color:#fff;border:0}.vp-acts button{background:transparent;color:#fff;border:1px solid #3a5288}
+.vp-note{margin:0;font-size:12px;color:#8fa3cc}
+@media (max-height:700px){.vp-dlg video{max-height:46vh}}
+</style>
+<div class="vp-ov" id="vpOv" role="dialog" aria-modal="true" aria-labelledby="vpT" hidden>
+  <div class="vp-dlg">
+    <button class="vp-x" type="button" id="vpX" aria-label="팝업 닫기">×</button>
+    <div class="vp-eb">먼저 직접 확인하십시오</div>
+    <h2 id="vpT">구글 뉴스 등록, 번번이 막힙니까?</h2>
+    <div class="vp-media"><div class="vp-hint" id="vpHint" hidden aria-live="polite">🔊 화면을 한 번 누르면 소리가 켜집니다</div>
+    <video id="vpV" poster="assets/video/poster.jpg" controls playsinline preload="metadata"><source src="assets/video/video.mp4" type="video/mp4"><source src="assets/video/video.webm" type="video/webm"></video></div>
+    <div class="vp-acts"><a href="https://mjsong2313-debug.github.io/cms-promo/inspect/apply.html" id="vpGo">내 사이트 직접 검사하기</a><button type="button" id="vpClose">닫기</button></div>
+    
+  </div>
+</div>
+<script>
+(function(){
+  var ov=document.getElementById('vpOv'),v=document.getElementById('vpV'),last=null;
+  function open(){
+    last=document.activeElement;ov.hidden=false;document.getElementById('vpX').focus({preventScroll:true});
+    v.muted=false;v.volume=1;
+    var p;try{p=v.play()}catch(e){}
+    if(p&&p.catch)p.catch(function(){
+      v.muted=true;var hint=document.getElementById('vpHint');if(hint)hint.hidden=false;
+      try{var q=v.play();if(q&&q.catch)q.catch(function(){})}catch(e){}
+      var on=function(){
+        ['pointerdown','touchend','click','keydown'].forEach(function(t){document.removeEventListener(t,on,true)});
+        if(ov.hidden)return;if(hint)hint.hidden=true;v.muted=false;v.volume=1;
+        var t0=Date.now();
+        var keep=function(){if(Date.now()-t0<700&&!ov.hidden){try{v.play()}catch(e){}}else v.removeEventListener('pause',keep)};
+        v.addEventListener('pause',keep);
+        try{var r=v.play();if(r&&r.catch)r.catch(function(){})}catch(e){}
+      };
+      ['pointerdown','touchend','click','keydown'].forEach(function(t){document.addEventListener(t,on,true)});
+    });
+  }
+  function close(){try{v.pause()}catch(e){}ov.hidden=true;if(last&&last.focus){try{last.focus({preventScroll:true})}catch(e){}}}
+  ['vpX','vpClose','vpGo'].forEach(function(id){document.getElementById(id).addEventListener('click',close)});
+  ov.addEventListener('click',function(e){if(e.target===ov)close()});
+  document.addEventListener('keydown',function(e){if(!ov.hidden&&e.key==='Escape')close()});
+  window.vpOpen=function(){try{v.currentTime=0}catch(e){}open()};
+  open();
+})();
+</script>
+
+</body></html>
