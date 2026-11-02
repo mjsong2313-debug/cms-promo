@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /popup/
+Disallow: /sample/
+Sitemap: https://mjsong2313-debug.github.io/cms-promo/sitemap.xml
