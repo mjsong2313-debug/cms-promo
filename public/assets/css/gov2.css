@@ -44,3 +44,17 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[role=tab]:focus-visi
 .d-h3{margin:26px 0 10px;font-size:1.05rem}
 .vp-sum{margin:6px 0 12px;line-height:1.6}
 .rep .d-rep{grid-template-columns:1fr}
+
+/* 보도자료 게재 확인 섹션·공보실 전용 페이지: 밝은 바탕에서 카드 글씨가 흰색으로 안 보이던 문제 보정 */
+#press .acc.big,.pp .acc.big{background:#fff;border:1px solid rgba(8,17,31,.16);border-radius:6px}
+#press .acc.big summary,.pp .acc.big summary{color:var(--ink)}
+#press .acc.big summary::after,.pp .acc.big summary::after{color:var(--blue)}
+#press .acc.big ul,.pp .acc.big ul{color:#46525e}
+#press .pp-go{margin-top:20px}
+.pp .tbl{width:100%;border-collapse:collapse;background:#fff;font-size:.95rem}
+.pp .tbl th,.pp .tbl td{border:1px solid rgba(8,17,31,.16);padding:10px 12px;text-align:left;vertical-align:top;color:var(--ink)}
+.pp .tbl th{background:rgba(8,17,31,.05)}
+.pp .tblw{overflow-x:auto;margin-top:24px}
+.pp .lt{display:inline-block;color:#fff;border-radius:999px;padding:2px 10px;font-size:.8rem;white-space:nowrap}
+.pp .lt.g{background:#1a7f37}.pp .lt.y{background:#b7791f}.pp .lt.n{background:#6b7280}
+.pp .no li{color:#46525e}
