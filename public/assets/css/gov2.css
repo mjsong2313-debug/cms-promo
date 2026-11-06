@@ -58,3 +58,5 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[role=tab]:focus-visi
 .pp .lt{display:inline-block;color:#fff;border-radius:999px;padding:2px 10px;font-size:.8rem;white-space:nowrap}
 .pp .lt.g{background:#1a7f37}.pp .lt.y{background:#b7791f}.pp .lt.n{background:#6b7280}
 .pp .no li{color:#46525e}
+
+@media(max-width:760px){.top-r .btn.ghost{display:none}}
