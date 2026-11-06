@@ -60,3 +60,5 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[role=tab]:focus-visi
 .pp .no li{color:#46525e}
 
 @media(max-width:760px){.top-r .btn.ghost{display:none}}
+
+.d-law .d-sub{margin:10px 0 0;color:#3c4652;font-size:14px}.d-eval .cols{grid-template-columns:repeat(3,1fr)}@media(max-width:760px){.d-eval .cols{grid-template-columns:1fr}}
