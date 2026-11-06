@@ -14,14 +14,14 @@
 <div class="alert">공공기관 전용 · 읽기 전용 측정 · 로그인·변경 없음</div>
 <header class="top"><div class="wrap">
   <a class="logo" href="#top"><span class="bm" aria-hidden="true"><i></i><i></i><i></i></span><span class="lg-t"><b>0000</b> <small>공공기관 웹 긴급 진단</small></span></a>
-  <nav class="nav" aria-label="주요 메뉴"><a href="#daily">매일 확인</a><a href="#hit">담당자가 겪는 일</a><a href="#self">30초 확인</a><a href="#how">조치 범위</a><a href="#steps">진행 절차</a>
+  <nav class="nav" aria-label="주요 메뉴"><a href="#daily">매일 확인</a><a href="#hit">담당자가 겪는 일</a><a href="#press">보도자료 게재 확인</a><a href="#self">30초 확인</a><a href="#how">조치 범위</a><a href="#steps">진행 절차</a>
     <div class="dd"><button class="dd-b" type="button" aria-haspopup="true" aria-expanded="false" id="ddB">진단 대상 <svg viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
     <div class="dd-m" id="ddM" role="menu"><a role="menuitem" href="#apply" data-k="중앙부처">중앙부처·청·위원회</a><a role="menuitem" href="#apply" data-k="도청·광역시청">도청·광역시청</a><a role="menuitem" href="#apply" data-k="시·군·구청">시청·군청·구청</a><a role="menuitem" href="#apply" data-k="의회·교육청">의회·교육청</a><a role="menuitem" href="#apply" data-k="산하기관·공기업">공단·공사·재단 등 산하기관</a></div></div></nav>
   <div class="top-r"><a class="btn sm" href="#apply">진단 신청</a><button class="burger" type="button" id="burger" aria-label="메뉴 열기" aria-controls="drawer" aria-expanded="false"><i></i><i></i><i></i></button></div>
 </div></header>
 <div class="dr-ov" id="drOv" hidden></div>
 <aside class="drawer" id="drawer" aria-label="메뉴" aria-hidden="true"><button class="dr-x" type="button" id="drX" aria-label="메뉴 닫기">×</button>
-  <a href="#daily">매일 확인</a><a href="#hit">담당자가 겪는 일</a><a href="#self">30초 확인</a><a href="#how">조치 범위</a><a href="#steps">진행 절차</a><a href="#apply">진단 신청</a><a class="btn" href="#apply">진단 신청</a></aside>
+  <a href="#daily">매일 확인</a><a href="#hit">담당자가 겪는 일</a><a href="#press">보도자료 게재 확인</a><a href="#self">30초 확인</a><a href="#how">조치 범위</a><a href="#steps">진행 절차</a><a href="#apply">진단 신청</a><a class="btn" href="#apply">진단 신청</a></aside>
 <main id="top">
 <section class="hero"><div class="wrap">
   <div class="hero-l">
@@ -102,6 +102,19 @@
 <span class="bad"> user-scalable=no</span><span class="c">"&gt;</span>   <span class="c">← 확대 막힘</span></pre></div></article>
     <article class="bx hit b4"><div class="bx-top"><span class="bx-n">04 · 보안 경고</span><span class="tag">인증서 만료일·헤더 측정</span></div><p class="say">“‘안전하지 않음’ 경고가 먼저 뜹니다.”</p><p class="why">인증서가 만료되면 브라우저가 접속 전에 경고 화면을 띄웁니다. 보안 헤더 6종은 보안 점검에서 확인하는 설정입니다.</p><div class="vis cert" role="img" aria-label="인증서 만료일과 보안 헤더 예시 화면"><div class="vis-h"><i></i><i></i><i></i><span>인증서·보안 헤더</span><em>예시</em></div><div class="gauge"><span>인증서 만료까지</span><b>D-9</b><div class="bar"><i style="width:12%"></i></div></div><div class="chips"><span class="ok">nosniff</span><span class="ok">X-Frame-Options</span><span class="bad">Referrer-Policy</span><span class="bad">HSTS</span><span class="bad">CSP</span><span class="bad">Permissions-Policy</span></div></div></article>
   </div>
+</div></section>
+
+<section class="s alt" id="press"><div class="wrap">
+  <p class="eyebrow">보도자료 게재 확인 · 시험 단계</p>
+  <h2><span class="soft">어제 낸 보도자료, 어디에 실렸는지 매일 확인합니다</span><span class="hard">어제 보도자료, 신문사마다 다시 찾고 계신가요?</span></h2>
+  <p class="lead">확인하고 싶은 신문사의 이름과 주소를 등록하면, 그 신문사의 공개 기사 목록에서 어제 보도자료와 제목이 비슷한 기사를 매일 찾아 정리합니다. 담당자는 원문을 열어 확인하고 대장에 담습니다.</p>
+  <div class="grid2">
+    <details class="acc big" open><summary>등록한 신문사부터</summary><ul><li>확인할 신문사의 이름과 주소만 등록합니다.</li><li>더 많은 신문사는 옵션(추가 요금)으로 늘립니다.</li></ul></details>
+    <details class="acc big" open><summary>보도자료별 신호등</summary><ul><li>정상 · 확인 필요 · 확인 못 함으로 표시합니다.</li><li>제목이 비슷한 기사는 ‘게재 추정’이라 원문 확인이 필요합니다.</li></ul></details>
+    <details class="acc big" open><summary>대장에 담기</summary><ul><li>‘확인했음 · 부정 · 조치 필요’를 표시하고 메모를 남깁니다.</li><li>판단은 담당자가 합니다. 오보 여부는 가리지 않습니다.</li></ul></details>
+    <details class="acc big" open><summary>일일 1장 보고</summary><ul><li>그날 결과와 메모를 한 장으로 정리합니다.</li><li>신문사별 확인 건수는 옵션으로 볼 수 있습니다(등록한 곳, 읽은 범위 안).</li></ul></details>
+  </div>
+  <p class="fine">이 기능은 시험 단계입니다. 기사 본문은 저장하지 않고 제목·매체·링크·시각만 다룹니다. 제목 유사도로 찾은 게재 추정이므로 원문 확인이 필요합니다. RSS가 없거나 접근이 막힌 신문사는 ‘확인 못 함’으로 표시하며, 미게재를 뜻하지 않습니다. 기존 뉴스 스크랩 서비스를 대체하지 않고 보완합니다.</p>
 </div></section>
 
 <section class="s" id="self"><div class="wrap">
