@@ -41,3 +41,5 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[role=tab]:focus-visi
 @media(prefers-reduced-motion:reduce){.marq-t{animation:none}.gv-pg{transition:none}}
 @media print{.alert,.top,.dock,.gv-tools,.gv-pg,.vp-ov,.marq{display:none!important}}
 @media(max-width:820px){.gv-tools{right:6px;gap:6px}.gv-tools button{width:40px;height:40px;opacity:.88}}
+.d-h3{margin:26px 0 10px;font-size:1.05rem}
+.vp-sum{margin:6px 0 12px;line-height:1.6}
