@@ -3,7 +3,7 @@
 .adn-a{position:relative;display:flex;align-items:center;overflow:hidden;background:var(--soft);border:1px solid var(--line);color:inherit;text-decoration:none;width:100%}
 .adn-bg{position:absolute;inset:-12px;background-size:cover;background-position:center;filter:blur(16px);opacity:.45}
 .adn-img{position:relative;flex:none;object-fit:contain;display:block}
-.adn-t{position:relative;display:flex;flex-direction:column;gap:2px;min-width:0;padding:0 10px}
+.adn-t{position:relative;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:2px;min-width:0;padding:0 10px}
 .adn-t em{font-style:normal;font-size:11px;color:var(--mute)}
 .adn-t b{font-size:13px;line-height:1.3;color:var(--fg);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .adn-tag{position:absolute;right:0;top:0;font-style:normal;font-size:10px;line-height:1;padding:3px 5px;background:rgba(0,0,0,.55);color:#fff}
