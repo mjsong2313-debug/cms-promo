@@ -30,7 +30,7 @@ $$('[data-page-size]').forEach(function(box){var rows=[].slice.call(box.children
  function lv(n){return n>=7?4:n>=5?3:n>=3?2:n>=1?1:0}var paths={},cur=null;
  window.NMAP_GEO.forEach(function(g){var n=(data[g.n]||[]).length,p=document.createElementNS(NS,'path');p.setAttribute('d',g.d);p.setAttribute('class','l'+lv(n));p.setAttribute('tabindex','0');p.setAttribute('role','button');p.setAttribute('aria-label',g.n+' 기사 '+n+'건 보기');var t=document.createElementNS(NS,'title');t.textContent=g.n+' ('+n+'건)';p.appendChild(t);
   function open(){openSido(g.n)}p.addEventListener('click',open);p.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}});svg.appendChild(p);paths[g.n]=p;
-  var tx=document.createElementNS(NS,'text');tx.setAttribute('x',g.x);tx.setAttribute('y',g.y+4);tx.textContent=g.n;svg.appendChild(tx)});
+  var tx=document.createElementNS(NS,'text');var LB={'경기':[172,92],'서울':[148,74],'인천':[111,84],'충남':[128,144],'세종':[166,133],'대전':[176,160]},lb=LB[g.n];tx.setAttribute('x',lb?lb[0]:g.x);tx.setAttribute('y',(lb?lb[1]:g.y)+4);if(lb&&g.n!='경기'&&g.n!='충남')tx.setAttribute('style','font-size:9px');tx.textContent=g.n;svg.appendChild(tx)});
  holder.appendChild(svg);
  function openSido(name,page){cur=name;Object.keys(paths).forEach(function(k){paths[k].classList.toggle('on',k===name)});var L=data[name]||[],size=5,n=Math.max(1,Math.ceil(L.length/size));page=Math.min(Math.max(1,page||1),n);
   var h='<div class="nmap-ph"><h3>'+name+'<em>('+L.length+'건)</em></h3><button type="button" class="nmap-x">닫기</button></div>';
