@@ -62,3 +62,4 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[role=tab]:focus-visi
 @media(max-width:760px){.top-r .btn.ghost{display:none}}
 
 .d-law .d-sub{margin:10px 0 0;color:#3c4652;font-size:14px}.d-eval .cols{grid-template-columns:repeat(3,1fr)}@media(max-width:760px){.d-eval .cols{grid-template-columns:1fr}}
+.skip-link{position:absolute;left:12px;top:-60px;z-index:1000;padding:10px 14px;background:#fff;color:#0b1b3a;border-radius:8px;font-weight:700;text-decoration:none}.skip-link:focus{top:12px}
