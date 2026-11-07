@@ -399,3 +399,46 @@ mark{background:rgba(31,58,120,.12);color:inherit;border-radius:0;padding:0;bord
 .ad-side-3 .adc-a{flex-direction:column;align-items:stretch;gap:8px;padding:0 0 10px}
 .ad-side-3 .adc-img{width:100%;max-width:100%;height:auto;max-height:480px;object-fit:contain;background:var(--soft)}
 .ad-side-3 .adc-t{padding:0 12px}
+
+/* ===== 새 홈 (신문 레이아웃) ===== */
+.nw-top{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:16px;margin:18px 0 14px}
+.nw-lead{position:relative;border-radius:4px;overflow:hidden;background:#111;aspect-ratio:16/10;min-height:260px}
+.nw-lead>a,.nw-lead img{display:block;width:100%;height:100%}
+.nw-lead img{object-fit:cover}
+.nw-lead .cap{position:absolute;left:0;right:0;bottom:0;padding:60px 22px 20px;background:linear-gradient(transparent,rgba(0,0,0,.85));color:#fff}
+.nw-badge{display:inline-block;background:var(--accent);color:#fff;font-size:12px;font-weight:700;letter-spacing:.06em;padding:3px 9px;border-radius:2px;margin-bottom:8px}
+.nw-lead h2{margin:0;font-size:clamp(20px,2.7vw,31px);line-height:1.3;color:#fff;text-wrap:balance}
+.nw-lead p{margin:8px 0 0;font-size:14px;line-height:1.5;color:rgba(255,255,255,.88)}
+.nw-special{background:var(--soft);border-radius:4px;padding:16px;display:flex;flex-direction:column;gap:9px;min-width:0}
+.nw-sp{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.04em}
+.nw-th{display:block;overflow:hidden;border-radius:3px;background:var(--soft);aspect-ratio:16/10}
+.nw-th img{width:100%;height:100%;object-fit:cover;display:block}
+.nw-special h3{margin:0;font-size:17px;line-height:1.4}
+.nw-mini{margin:4px 0 0;padding:10px 0 0 18px;border-top:1px solid var(--line);font-size:14px;line-height:1.5;display:flex;flex-direction:column;gap:7px}
+.nw-trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0 0 20px}
+.nw-card{display:flex;flex-direction:column;gap:7px;min-width:0}
+.nw-card h3{margin:0;font-size:16px;line-height:1.4;text-wrap:balance}
+.nw-card h3 a,.nw-bl h3 a{color:var(--fg);text-decoration:none}
+.nw-card h3 a:hover,.nw-bl h3 a:hover,.nw-bl2 a:hover{text-decoration:underline}
+.nw-tag{align-self:flex-start;font-size:11px;font-weight:700;background:var(--brand);color:#fff;padding:2px 7px;border-radius:2px}
+.nw-card .meta,.nw-bl .meta,.nw-bl2 .meta{font-size:12px;color:var(--mute)}
+.nw-block{margin:0 0 26px}
+.nw-block .bh{border-top:2px solid var(--fg);padding-top:9px}
+.nw-bgrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:18px;align-items:start}
+.nw-bl{display:flex;flex-direction:column;gap:7px;min-width:0}
+.nw-bl h3{margin:0;font-size:19px;line-height:1.4;text-wrap:balance}
+.nw-bl p{margin:0;font-size:14px;line-height:1.55;color:var(--mute)}
+.nw-bl2{display:flex;flex-direction:column;gap:0;margin:0;padding:0;list-style:none}
+.nw-bl2 li{padding:9px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:3px}
+.nw-bl2 li:first-child{padding-top:0}
+.nw-bl2 a{color:var(--fg);text-decoration:none;font-size:15px;line-height:1.45}
+.nw-rgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.nw-pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.nw-ph{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;border-radius:3px;background:var(--soft)}
+.nw-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.nw-ph span{position:absolute;left:0;right:0;bottom:0;padding:26px 10px 8px;color:#fff;font-size:13px;line-height:1.35;background:linear-gradient(transparent,rgba(0,0,0,.8));display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.nw-noimg{display:flex;align-items:center;justify-content:center;background:var(--brand);color:#fff;font-size:13px;letter-spacing:.04em;aspect-ratio:16/10}
+.nw-noimg b{font-weight:600;padding:0 8px;text-align:center}
+.side .widget .plain li{display:flex;flex-direction:column;gap:2px}
+@media (max-width:860px){.nw-top{grid-template-columns:1fr}.nw-trio,.nw-rgrid,.nw-pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.nw-bgrid{grid-template-columns:1fr}}
+@media (max-width:520px){.nw-trio,.nw-rgrid{grid-template-columns:1fr}.nw-pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.nw-lead{aspect-ratio:4/3}}
