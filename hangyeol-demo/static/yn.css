@@ -142,3 +142,22 @@ article h1{font-weight:800;letter-spacing:-.05em}
 .nmap-help{margin:6px 0 12px}
 @media(max-width:1000px){.nmap-body{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 @media(max-width:860px){.nmap-body{grid-template-columns:1fr}}
+/* 뉴스맵: 영남일보 NEWS MAP 형식(청록 띠 + 지도 840 + 기사 칸 360) */
+.nmap{margin:0 0 40px}
+.nmap .bh{border:0;margin:0;padding:0 20px;height:60px;background:linear-gradient(100deg,#0ec5be 0%,#09b0a9 100%);display:flex;align-items:center;gap:12px;cursor:pointer;position:relative}
+.nmap .bh h2{font-size:18px;font-weight:900;color:#fff;letter-spacing:-.02em;line-height:1}
+.nmap .bh h2::after{content:"";}
+.nmap-live{background:rgba(255,255,255,.22);color:#fff;border-radius:3px;font-size:13px;padding:3px 8px}
+.nmap-chev{margin-left:auto;width:30px;height:30px;border:0;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;font-size:16px;line-height:30px;text-align:center;cursor:pointer;padding:0;transition:transform .2s}
+.nmap-off .nmap-chev{transform:rotate(180deg)}
+.nmap-off .nmap-help,.nmap-off .nmap-body{display:none}
+.nmap-help{margin:0;padding:12px 20px 0;background:#fafefe}
+.nmap-body{grid-template-columns:minmax(0,840px) minmax(0,1fr);gap:0;align-items:stretch}
+.nmap-svg{background:#fafefe;padding:10px 20px 14px;display:flex;flex-direction:column;align-items:center}
+.nmap-svg-in{width:100%;display:flex;justify-content:center}
+.nmap-svg svg{width:auto;max-width:100%;max-height:640px;height:640px}
+.nmap-legend{align-self:flex-start}
+.nmap-panel{border:0;border-left:1px solid #d7d7d7;padding:16px 20px;background:#fff}
+.nmap-ph{border-bottom-color:#111}
+@media(max-width:1000px){.nmap-body{grid-template-columns:1fr}.nmap-panel{border-left:0;border-top:1px solid #d7d7d7}.nmap-svg svg{height:auto;max-height:520px}}
+@media(max-width:860px){.nmap .bh{height:52px;padding:0 14px}.nmap-svg{padding:8px 10px 12px}}
