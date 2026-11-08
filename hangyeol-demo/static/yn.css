@@ -73,3 +73,21 @@ a:hover{color:var(--yn)}
 .body,.body p,.art h1,h1.title,.art-h h1,article h1{font-family:Pretendard,"Pretendard Variable","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif}
 .body{font-size:17px;line-height:1.9;letter-spacing:-.02em}
 article h1{font-weight:800;letter-spacing:-.05em}
+/* 바닥글: 밝은 바탕에서 글자가 보이도록 색 지정 */
+.footer{--ft:#111;--ft2:#555;--ftl:#cfcfcf}
+:root[data-theme=dark] .footer{--ft:#fff;--ft2:#b6c4c4;--ftl:#34444a}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .footer{--ft:#fff;--ft2:#b6c4c4;--ftl:#34444a}}
+.footer,.footer p,.footer span{color:var(--ft2)}
+.footer a{color:var(--ft2)}.footer a:hover{color:var(--yn);text-decoration:underline}
+.footer h3,.sitemap h3,.sitemap h3 a,.fbrand,.flinks strong{color:var(--ft)}
+.fbrand{font-family:Pretendard,"Noto Sans KR",sans-serif;font-weight:800;color:var(--yn)}
+.fmap{border-bottom:1px solid var(--ftl)}
+.fmap>summary{color:var(--ft);font-weight:800}
+.fmap>summary:focus-visible{outline-color:var(--yn)}
+.fbottom,.finfo{border-top-color:var(--ftl)}
+.flinks a{border-left-color:var(--ftl)}
+.foffices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 24px;margin:0 0 14px;padding:0 0 14px;border-bottom:1px solid var(--ftl)}
+.foffices dl{margin:0;display:flex;gap:10px;font-size:13px;line-height:1.5}
+.foffices dt{flex:none;font-weight:800;color:var(--ft);min-width:5.2em}
+.foffices dd{margin:0;color:var(--ft2)}
+@media(max-width:860px){.foffices{grid-template-columns:1fr}}
