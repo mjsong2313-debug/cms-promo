@@ -19,3 +19,9 @@
 .adn-house .adn-a{justify-content:center;text-align:center;background:var(--card)}.adn-house .adn-t{align-items:center}
 @media(max-width:720px){.adn-trio,.adn-grid{grid-template-columns:1fr;gap:8px}.adn-strip .adn-a{height:56px}}
 @media(max-width:380px){.adn-big .adn-a{max-width:100%}}
+
+/* 업체 광고: 업체 이름 박스(로고 이미지는 쓰지 않음) */
+.adn-logo{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;text-align:center;line-height:1.15;padding:4px;overflow:hidden;word-break:keep-all;font-size:12px}
+.adn-bar .adn-logo{font-size:10px}
+.adn-big .adn-logo{font-size:30px}
+.adn-strip .adn-logo,.adn-bar65 .adn-logo{font-size:11px}
