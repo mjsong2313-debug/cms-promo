@@ -207,3 +207,6 @@ document.addEventListener('click', function (e) {
 function chk(){document.querySelectorAll('img[referrerpolicy="no-referrer"]').forEach(function(i){i.addEventListener('error',function(){retry(i)});if(i.complete&&i.naturalWidth===0&&i.getAttribute('src'))retry(i)})}
 if(document.readyState!=='loading')chk();else document.addEventListener('DOMContentLoaded',chk);
 window.addEventListener('load',function(){document.querySelectorAll('img[referrerpolicy="no-referrer"]').forEach(function(i){if(i.complete&&i.naturalWidth===0)retry(i)})})})();
+
+/* 상단 오늘 날짜: 보는 날짜(한국 시간)로 항상 맞춘다 */
+(function(){try{var e=document.querySelector('.today');if(!e)return;var p=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',year:'numeric',month:'long',day:'numeric',weekday:'long'}).format(new Date());e.textContent=p}catch(_){}})();
