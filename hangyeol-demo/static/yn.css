@@ -193,21 +193,21 @@ article h1{font-weight:800;letter-spacing:-.05em}
 
 /* ===== 글자 시인성: 영남일보 실측값 적용 (18px/500 검정, 자간 -1px, 메타 13px 회색) ===== */
 body{letter-spacing:-.045em}
-.nw-card h3,.nw-card h3 a,.nw-card>a:not(.nw-th){font-size:18px;font-weight:500;color:#000;line-height:1.55;letter-spacing:-.055em}
-.nw-bl h3,.nw-bl h3 a,.nw-bl h2 a{font-size:22px;font-weight:600;color:#000;line-height:1.4;letter-spacing:-.075em}
-ul.plain li a,.nw-bl2 li a{font-size:18px;font-weight:500;color:#000;line-height:1.55;letter-spacing:-.055em}
-.sl-card li a,.sl-card h4 a,.sl-card>a:not(.nw-th){font-size:17px;font-weight:500;color:#000;line-height:1.5;letter-spacing:-.055em}
+.nw-card h3,.nw-card h3 a,.nw-card>a:not(.nw-th){font-size:18px;font-weight:500;color:var(--fg);line-height:1.55;letter-spacing:-.055em}
+.nw-bl h3,.nw-bl h3 a,.nw-bl h2 a{font-size:22px;font-weight:600;color:var(--fg);line-height:1.4;letter-spacing:-.075em}
+ul.plain li a,.nw-bl2 li a{font-size:18px;font-weight:500;color:var(--fg);line-height:1.55;letter-spacing:-.055em}
+.sl-card li a,.sl-card h4 a,.sl-card>a:not(.nw-th){font-size:17px;font-weight:500;color:var(--fg);line-height:1.5;letter-spacing:-.055em}
 .sl-card h3 a{font-size:16px}
-ol.rank li a,ol.nw-mini li a{font-size:17px;font-weight:500;color:#000;line-height:1.5;letter-spacing:-.055em}
-.meta,.meta time{font-size:13px;color:#666;line-height:1.5;letter-spacing:-.05em}
+ol.rank li a,ol.nw-mini li a{font-size:17px;font-weight:500;color:var(--fg);line-height:1.5;letter-spacing:-.055em}
+.meta,.meta time{font-size:13px;color:var(--mute);line-height:1.5;letter-spacing:-.05em}
 .meta .cat,.cat{font-size:13px;font-weight:700;color:#03a39c}
 .nw-lead .cap h2{font-size:34px;font-weight:800;line-height:1.3;letter-spacing:-.075em}
 .nw-lead .cap p{font-size:16px;line-height:1.55;color:rgba(255,255,255,.92)}
 .nw-ph span{font-size:18px;font-weight:500;line-height:1.4;letter-spacing:-.055em}
 .sb-card h3 a{font-weight:500;font-size:18px}
-.notice2 li a,.sitemap a{font-size:14px;color:#111}
-.nmap-list li a{font-size:15px;color:#000;font-weight:500}
-body .meta,body .meta time,body .nw-card .meta,body .sl-card .meta,body ul.plain .meta{font-size:13px!important;color:#666!important}
+.notice2 li a,.sitemap a{font-size:14px;color:var(--fg)}
+.nmap-list li a{font-size:15px;color:var(--fg);font-weight:500}
+body .meta,body .meta time,body .nw-card .meta,body .sl-card .meta,body ul.plain .meta{font-size:13px!important;color:var(--mute)!important}
 body .meta .cat{font-size:13px!important}
 
 /* 모바일 복구: 본문 2단(840+320)이 폰에서 1단으로 접히지 않아 글이 한 글자씩 세로로 깨짐 */
@@ -220,3 +220,14 @@ body .meta .cat{font-size:13px!important}
 @media(max-width:860px){.masthead .logo img{height:auto;width:min(200px,52vw)}}
 @media(max-width:860px){.masthead .wrap{grid-template-columns:auto minmax(0,1fr);gap:12px}.masthead .logo{justify-self:start}.masthead .logo img{max-width:none;width:170px;height:auto}.masthead .search{min-width:0}}
 @media(max-width:860px){.masthead .logo img{width:150px}.masthead .search{display:flex;min-width:0;width:100%}.masthead .search input{min-width:0;width:100%;flex:1}.masthead .search button{flex:none}}
+
+/* 다크 모드 보정: 고정 흰 바탕/흰 글자 때문에 안 보이던 곳(뉴스맵·배지·태그) */
+:root{--on-yn:#fff;--map-bg:#fafefe;--panel-bg:#fff;--bd:#d7d7d7}
+:root[data-theme=dark]{--on-yn:#06201f;--map-bg:#12191d;--panel-bg:#141c20;--bd:#2a3636}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--on-yn:#06201f;--map-bg:#12191d;--panel-bg:#141c20;--bd:#2a3636}}
+.nmap-help,.nmap-svg{background:var(--map-bg)}
+.nmap-panel{background:var(--panel-bg);border-left-color:var(--bd)}
+.nmap-ph{border-bottom-color:var(--fg)}
+.nw-badge,.nw-tag{color:var(--on-yn)}
+.pg-info{color:var(--mute)}
+@media(max-width:1000px){.nmap-panel{border-top-color:var(--bd)}}
