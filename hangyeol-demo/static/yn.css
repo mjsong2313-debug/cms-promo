@@ -213,3 +213,10 @@ body .meta .cat{font-size:13px!important}
 /* 모바일 복구: 본문 2단(840+320)이 폰에서 1단으로 접히지 않아 글이 한 글자씩 세로로 깨짐 */
 @media(max-width:960px){.cols{grid-template-columns:minmax(0,1fr)!important;gap:28px}.main-col,.side-col,aside.side{min-width:0}}
 @media(max-width:600px){ul.plain li a,.nw-bl2 li a{font-size:16px}.nw-card h3,.nw-card h3 a{font-size:17px}.nw-bl h3,.nw-bl h3 a{font-size:20px}.nw-lead .cap h2{font-size:22px}}
+
+/* 새 로고(한결일보 ㅎ 아이콘형): 다크 모드에선 밝은 버전으로 교체, 기존 반전 필터 해제 */
+:root[data-theme=dark] .logo img{filter:none;content:url(logo-dark.svg)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .logo img{filter:none;content:url(logo-dark.svg)}}
+@media(max-width:860px){.masthead .logo img{height:auto;width:min(200px,52vw)}}
+@media(max-width:860px){.masthead .wrap{grid-template-columns:auto minmax(0,1fr);gap:12px}.masthead .logo{justify-self:start}.masthead .logo img{max-width:none;width:170px;height:auto}.masthead .search{min-width:0}}
+@media(max-width:860px){.masthead .logo img{width:150px}.masthead .search{display:flex;min-width:0;width:100%}.masthead .search input{min-width:0;width:100%;flex:1}.masthead .search button{flex:none}}
