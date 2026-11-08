@@ -209,3 +209,7 @@ ol.rank li a,ol.nw-mini li a{font-size:17px;font-weight:500;color:#000;line-heig
 .nmap-list li a{font-size:15px;color:#000;font-weight:500}
 body .meta,body .meta time,body .nw-card .meta,body .sl-card .meta,body ul.plain .meta{font-size:13px!important;color:#666!important}
 body .meta .cat{font-size:13px!important}
+
+/* 모바일 복구: 본문 2단(840+320)이 폰에서 1단으로 접히지 않아 글이 한 글자씩 세로로 깨짐 */
+@media(max-width:960px){.cols{grid-template-columns:minmax(0,1fr)!important;gap:28px}.main-col,.side-col,aside.side{min-width:0}}
+@media(max-width:600px){ul.plain li a,.nw-bl2 li a{font-size:16px}.nw-card h3,.nw-card h3 a{font-size:17px}.nw-bl h3,.nw-bl h3 a{font-size:20px}.nw-lead .cap h2{font-size:22px}}
