@@ -1,0 +1,64 @@
+/* gov2.css — 공공기관 페이지 고도화(한결일보 화면 개선과 같은 방향). 지우려면 html 에서 gov2.css / gov2.js 두 줄만 빼면 이전 상태. */
+/* AI티 줄이기: 번지는 빛·겹원 장식 제거, 가는 선, 밑줄 강조 */
+.hero{background:var(--ink)}
+#safe::before{display:none}
+.ux-px{display:none}
+.s h2{letter-spacing:-.035em;text-wrap:balance}
+.hero h1 em{background:none;box-shadow:inset 0 -.28em 0 rgba(73,215,237,.28);color:#fff}
+.bx,.safe3 article,.panel,.acc,.flow .node{box-shadow:none}
+.bx{border:1px solid rgba(8,17,31,.14)}
+/* 읽기 편의: 본문 크기 조절(글자 크기 단추가 html 에 클래스를 붙임) */
+html.fs1 body{font-size:107%}html.fs2 body{font-size:115%}html.fs3 body{font-size:125%}
+.s .lead,.why,.say+p{max-width:68ch}
+.s p,.s li{line-height:1.75}
+/* 터치·키보드 */
+a:focus-visible,button:focus-visible,summary:focus-visible,[role=tab]:focus-visible{outline:3px solid #2f7df4;outline-offset:2px}
+.btn,.burger,.dd-b{min-height:44px}
+/* 읽은 정도 띠 + 위로 + 글자 크기 */
+.gv-pg{position:fixed;left:0;top:0;height:3px;width:0;background:var(--blue);z-index:90;transition:width .1s}
+.gv-tools{position:fixed;right:max(12px,env(safe-area-inset-right));bottom:calc(84px + env(safe-area-inset-bottom));z-index:60;display:flex;flex-direction:column;gap:8px}
+.gv-tools button{width:44px;height:44px;border-radius:6px;border:1px solid rgba(8,17,31,.25);background:#fff;color:var(--ink);font:800 15px var(--f);cursor:pointer}
+.gv-tools .gv-top{opacity:0;pointer-events:none;transition:opacity .2s}.gv-tools .gv-top.on{opacity:1;pointer-events:auto}
+@media(min-width:821px){.gv-tools{bottom:24px}}
+/* 매일 확인 구역 */
+#daily{--fg:#08111f}
+.d-lamps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0 0;padding:0;list-style:none}
+.d-lamps li{background:#fff;border:1px solid rgba(8,17,31,.16);border-top:4px solid var(--c);border-radius:6px;padding:16px 16px 18px}
+.d-lamps b{display:block;font-size:19px;margin-bottom:4px}.d-lamps span{color:#46525e;font-size:15px}
+.d-lamps .g{--c:#2e9b5b}.d-lamps .y{--c:#e0a100}.d-lamps .r{--c:#d9453b}.d-lamps .n{--c:#7a8794}
+.d-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:26px 0 0;padding:0;list-style:none;counter-reset:d}
+.d-steps li{counter-increment:d;border-top:1px solid rgba(8,17,31,.3);padding:14px 4px 0}
+.d-steps li::before{content:counter(d);display:block;font:700 13px var(--m);color:#2f7df4;margin-bottom:6px}
+.d-steps b{display:block;font-size:20px;margin-bottom:4px}.d-steps span{color:#46525e}
+.d-law{margin-top:28px;border:1px solid rgba(8,17,31,.2);border-left:5px solid #2f7df4;background:#fff;border-radius:6px;padding:20px 22px}
+.d-law h3{font-size:20px;margin:0 0 4px}.d-law small{color:#66717d}
+.d-law .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:14px 0}
+.d-law .cols b{display:block;margin-bottom:4px}
+.d-note{margin-top:18px;padding:14px 16px;background:var(--paper);border:1px solid rgba(8,17,31,.12);border-radius:6px}
+.d-rep{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 18px;margin:22px 0 0;padding:0;list-style:none}
+.d-rep li{border-bottom:1px solid rgba(8,17,31,.15);padding:8px 0}.d-rep b{margin-right:6px}
+@media(max-width:820px){.d-lamps{grid-template-columns:1fr 1fr}.d-steps,.d-rep,.d-law .cols{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.marq-t{animation:none}.gv-pg{transition:none}}
+@media print{.alert,.top,.dock,.gv-tools,.gv-pg,.vp-ov,.marq{display:none!important}}
+@media(max-width:820px){.gv-tools{right:6px;gap:6px}.gv-tools button{width:40px;height:40px;opacity:.88}}
+.d-h3{margin:26px 0 10px;font-size:1.05rem}
+.vp-sum{margin:6px 0 12px;line-height:1.6}
+.rep .d-rep{grid-template-columns:1fr}
+
+/* 보도자료 게재 확인 섹션·공보실 전용 페이지: 밝은 바탕에서 카드 글씨가 흰색으로 안 보이던 문제 보정 */
+#press .acc.big,.pp .acc.big{background:#fff;border:1px solid rgba(8,17,31,.16);border-radius:6px}
+#press .acc.big summary,.pp .acc.big summary{color:var(--ink)}
+#press .acc.big summary::after,.pp .acc.big summary::after{color:var(--blue)}
+#press .acc.big ul,.pp .acc.big ul{color:#46525e}
+#press .pp-go{margin-top:20px}
+.pp .tbl{width:100%;border-collapse:collapse;background:#fff;font-size:.95rem}
+.pp .tbl th,.pp .tbl td{border:1px solid rgba(8,17,31,.16);padding:10px 12px;text-align:left;vertical-align:top;color:var(--ink)}
+.pp .tbl th{background:rgba(8,17,31,.05)}
+.pp .tblw{overflow-x:auto;margin-top:24px}
+.pp .lt{display:inline-block;color:#fff;border-radius:999px;padding:2px 10px;font-size:.8rem;white-space:nowrap}
+.pp .lt.g{background:#1a7f37}.pp .lt.y{background:#b7791f}.pp .lt.n{background:#6b7280}
+.pp .no li{color:#46525e}
+
+@media(max-width:760px){.top-r .btn.ghost{display:none}}
+
+.d-law .d-sub{margin:10px 0 0;color:#3c4652;font-size:14px}.d-eval .cols{grid-template-columns:repeat(3,1fr)}@media(max-width:760px){.d-eval .cols{grid-template-columns:1fr}}
