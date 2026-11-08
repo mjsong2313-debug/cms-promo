@@ -1,0 +1,32 @@
+/* 광고란: 영남일보 실측 규격(우측 320폭 배너 45/400, 기사 우측 330x65, 3열 352x74, 하단 3열 타일 80) 적용. 이미지는 자르지 않고 contain */
+.ad.adn{max-width:none;width:100%;margin:0 0 16px;position:relative}
+.adn-a{position:relative;display:flex;align-items:center;overflow:hidden;background:var(--soft);border:1px solid var(--line);color:inherit;text-decoration:none;width:100%}
+.adn-bg{position:absolute;inset:-12px;background-size:cover;background-position:center;filter:blur(16px);opacity:.45}
+.adn-img{position:relative;flex:none;object-fit:contain;display:block}
+.adn-t{position:relative;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:2px;min-width:0;padding:0 10px}
+.adn-t em{font-style:normal;font-size:11px;color:var(--mute)}
+.adn-t b{font-size:13px;line-height:1.3;color:var(--fg);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.adn-tag{position:absolute;right:0;top:0;font-style:normal;font-size:10px;line-height:1;padding:3px 5px;background:rgba(0,0,0,.55);color:#fff}
+.adn-bar .adn-a{height:45px}.adn-bar .adn-img{width:45px;height:45px}.adn-bar .adn-t em{display:none}.adn-bar .adn-t b{-webkit-line-clamp:1}
+.adn-bar65 .adn-a{height:65px}.adn-bar65 .adn-img{width:65px;height:65px}.adn-bar65 .adn-t b{-webkit-line-clamp:2}
+.adn-big .adn-a{flex-direction:column;align-items:stretch;height:400px;max-width:320px;margin:0 auto}
+.adn-big .adn-img{width:100%;height:330px}.adn-big .adn-t{padding:6px 12px;justify-content:center;flex:1}.adn-big .adn-t b{font-size:14px}
+.adn-strip{margin:12px 0}.adn-strip .adn-a{height:60px}.adn-strip .adn-img{width:60px;height:60px}.adn-strip .adn-t b{-webkit-line-clamp:1;font-size:14px}
+.adn-trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:8px 0 24px}
+.adn-trio .ad.adn{margin:0}.adn-trio .adn-a{height:74px}.adn-trio .adn-img{width:74px;height:74px}
+.adn-gridwrap{margin:8px auto 28px}.adn-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.adn-grid .ad.adn{margin:0}.adn-tile .adn-a{height:80px}.adn-tile .adn-img{width:80px;height:80px}
+.adn-house .adn-a{justify-content:center;text-align:center;background:var(--card)}.adn-house .adn-t{align-items:center}
+@media(max-width:720px){.adn-trio,.adn-grid{grid-template-columns:1fr;gap:8px}.adn-strip .adn-a{height:56px}}
+@media(max-width:380px){.adn-big .adn-a{max-width:100%}}
+
+/* 업체 광고: 업체 이름 박스(로고 이미지는 쓰지 않음) */
+.adn-logo{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;text-align:center;line-height:1.15;padding:4px;overflow:hidden;word-break:keep-all;font-size:12px}
+.adn-bar .adn-logo{font-size:10px}
+.adn-big .adn-logo{font-size:30px}
+.adn-strip .adn-logo,.adn-bar65 .adn-logo{font-size:11px}
+
+/* 업체 광고 이미지: 흰 바탕에 contain */
+.adn-co{background:#fff}
+.adn-bg{opacity:.25}
+.adn-t em{color:var(--mute)}
