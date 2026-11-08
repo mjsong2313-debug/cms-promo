@@ -30,3 +30,20 @@
 .adn-co{background:#fff}
 .adn-bg{opacity:.25}
 .adn-t em{color:var(--mute)}
+
+/* 시인성 강화: 이미지 키움·글자 키움·테두리 */
+.adn-a{border:2px solid #c9ced6;background:var(--card,#fff);box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.adn-a:hover{border-color:#c8102e}
+.adn-img.adn-co{object-fit:contain;padding:6px;background:#fff}
+.adn-t{padding:0 14px}
+.adn-t em{font-size:12px}
+.adn-t b{font-size:17px;font-weight:800;line-height:1.25;-webkit-line-clamp:2}
+.adn-tag{font-size:11px;padding:4px 7px;background:#c8102e;color:#fff;top:0;right:0}
+.adn-bar .adn-a{height:84px}.adn-bar .adn-img{width:140px;height:100%}.adn-bar .adn-t em{display:block}.adn-bar .adn-t b{font-size:17px;-webkit-line-clamp:2}
+.adn-bar65 .adn-a{height:96px}.adn-bar65 .adn-img{width:150px;height:100%}
+.adn-strip .adn-a{height:96px}.adn-strip .adn-img{width:200px;height:100%}.adn-strip .adn-t b{font-size:20px}.adn-strip .adn-t em{font-size:13px}
+.adn-trio .adn-a{height:110px}.adn-trio .adn-img{width:140px;height:100%}
+.adn-tile .adn-a{height:120px}.adn-tile .adn-img{width:160px;height:100%}
+.adn-big .adn-a{height:auto;max-width:320px}.adn-big .adn-img{width:100%;height:240px}.adn-big .adn-t{padding:12px 14px}.adn-big .adn-t b{font-size:20px}
+.adn-house .adn-a{min-height:120px}.adn-house .adn-t b{font-size:18px}
+@media(max-width:720px){.adn-strip .adn-a{height:84px}.adn-strip .adn-img{width:130px}.adn-trio .adn-a,.adn-tile .adn-a{height:96px}.adn-trio .adn-img,.adn-tile .adn-img{width:130px}.adn-t b{font-size:16px}}
