@@ -131,3 +131,14 @@ article h1{font-weight:800;letter-spacing:-.05em}
 @media(max-width:860px){.sc-lead{grid-template-columns:1fr}.sc-lx{padding:22px}.sc-lx h2{font-size:24px}.sc-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}.sc-head h1{font-size:30px}.sb-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px}.scoop-band{padding:18px 14px 20px}.sb-card h3{font-size:16px}}
 @media(max-width:520px){.sc-grid{grid-template-columns:1fr}}
 .sc-lx .sc-badge{align-self:flex-start}
+/* 전국 뉴스맵: 지도를 크게, 오른쪽 지역 기사 칸은 좁게 */
+.nmap-body{grid-template-columns:minmax(0,690px) minmax(0,1fr);gap:20px}
+.nmap-svg{padding:14px}
+.nmap-svg svg{max-height:none}
+.nmap-svg text{font-size:12px}
+.nmap-panel{padding:10px 14px}
+.nmap-ph h3{font-size:17px}
+.nmap-list li{padding:7px 0;gap:2px}.nmap-list a{font-size:14px;line-height:1.4}
+.nmap-help{margin:6px 0 12px}
+@media(max-width:1000px){.nmap-body{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media(max-width:860px){.nmap-body{grid-template-columns:1fr}}
