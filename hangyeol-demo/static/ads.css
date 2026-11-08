@@ -25,3 +25,8 @@
 .adn-bar .adn-logo{font-size:10px}
 .adn-big .adn-logo{font-size:30px}
 .adn-strip .adn-logo,.adn-bar65 .adn-logo{font-size:11px}
+
+/* 업체 광고 이미지: 흰 바탕에 contain */
+.adn-co{background:#fff}
+.adn-bg{opacity:.25}
+.adn-t em{color:var(--mute)}
