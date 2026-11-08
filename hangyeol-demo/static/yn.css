@@ -65,3 +65,11 @@ a:hover{color:var(--yn)}
 .adn-a:hover{border-color:var(--yn)}.adn-tag{background:#555}
 /* 작은 화면 */
 @media(max-width:860px){.yn-top{grid-template-columns:1fr;gap:24px}.masthead .wrap{grid-template-columns:1fr auto;padding-top:14px;padding-bottom:16px}.slogan{display:none}.logo img{height:44px}.gnb .wrap{justify-content:flex-start}.gnb a{font-size:15px;padding:12px 14px}.nw-lead .cap h2{font-size:22px}.yn-l .nw-trio{grid-template-columns:1fr}.bh h2,.widget h2{font-size:21px}.cols{gap:28px}}
+/* 모서리 각지게, 뉴스맵 위 검은 줄 제거 */
+.nmap .bh,.block.nmap .bh{border-top:0}
+.nmap-svg,.nmap-panel,.sl-card,.widget,.nw-special,.btn,.pager a,.pager span{border-radius:0}
+.nmap-panel{border-color:#d7d7d7}.nmap-svg{background:var(--yn-l)}
+/* 기사 본문·제목도 같은 고딕 */
+.body,.body p,.art h1,h1.title,.art-h h1,article h1{font-family:Pretendard,"Pretendard Variable","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif}
+.body{font-size:17px;line-height:1.9;letter-spacing:-.02em}
+article h1{font-weight:800;letter-spacing:-.05em}

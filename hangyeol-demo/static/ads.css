@@ -47,3 +47,5 @@
 .adn-big .adn-a{height:auto;max-width:320px}.adn-big .adn-img{width:100%;height:240px}.adn-big .adn-t{padding:12px 14px}.adn-big .adn-t b{font-size:20px}
 .adn-house .adn-a{min-height:120px}.adn-house .adn-t b{font-size:18px}
 @media(max-width:720px){.adn-strip .adn-a{height:84px}.adn-strip .adn-img{width:130px}.adn-trio .adn-a,.adn-tile .adn-a{height:96px}.adn-trio .adn-img,.adn-tile .adn-img{width:130px}.adn-t b{font-size:16px}}
+/* 3칸 광고: 칸 안의 광고 상자가 격자로 잡혀 좁아지던 문제 바로잡음 */
+.ad.adn.adn-trio{display:block;margin:0;gap:0;grid-template-columns:none}
