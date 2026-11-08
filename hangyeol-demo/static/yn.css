@@ -161,3 +161,32 @@ article h1{font-weight:800;letter-spacing:-.05em}
 .nmap-ph{border-bottom-color:#111}
 @media(max-width:1000px){.nmap-body{grid-template-columns:1fr}.nmap-panel{border-left:0;border-top:1px solid #d7d7d7}.nmap-svg svg{height:auto;max-height:520px}}
 @media(max-width:860px){.nmap .bh{height:52px;padding:0 14px}.nmap-svg{padding:8px 10px 12px}}
+/* 사진 위 이름표+제목 카드 (영남일보 기획·시리즈 줄 방식): 아래쪽 어두운 그라데이션 + 청록 이름표 + 흰 제목 */
+.ov-card{position:relative;min-width:0}
+.ov-a{position:relative;display:block;aspect-ratio:285/321;overflow:hidden;background:#222;color:#fff}
+.ov-a img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.ov-a:hover img{transform:scale(1.04)}
+.ov-a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:62%;background:linear-gradient(to top,rgba(0,0,0,.86),rgba(0,0,0,.04));pointer-events:none}
+.ov-box{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.ov-badge{display:inline-block;background:#009d96;color:#fff;font-size:13px;line-height:1.2;padding:6px 8px;font-weight:600;letter-spacing:-.02em}
+.ov-title{color:#fff;font-size:19px;font-weight:600;line-height:1.35;letter-spacing:-.04em;text-shadow:0 1px 3px rgba(0,0,0,.5);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ov-a:hover{text-decoration:none}
+.ser-strip{margin:0 0 40px}
+.ser-head{display:flex;align-items:center;justify-content:space-between;margin:0 0 18px;padding-top:14px;border-top:1px solid #111}
+.ser-head h2{margin:0;font-size:24px;font-weight:700;letter-spacing:-.05em;line-height:1}.ser-head h2 a{color:var(--fg)}.ser-head h2 a:hover{color:var(--yn);text-decoration:none}
+.ser-arrow{width:34px;height:34px;border-radius:50%;background:var(--yn);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;line-height:1}.ser-arrow:hover{text-decoration:none;color:#fff;background:var(--yn-d)}
+.ser-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+/* 기획·시리즈 페이지 */
+.sp-wrap{padding-bottom:56px}
+.sp-head{margin:18px 0 26px;padding-bottom:14px;border-bottom:2px solid var(--yn)}
+.sp-head h1{margin:0;font-size:38px;font-weight:800;letter-spacing:-.05em;color:var(--yn);line-height:1.1}.sp-head p{margin:8px 0 0;color:var(--mute);font-size:15px}
+.sp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 24px}
+.sp-card{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 8px 22px rgba(0,0,0,.14);display:flex;flex-direction:column;min-width:0}
+.sp-th{display:block;aspect-ratio:16/10;background:var(--yn-l);overflow:hidden}.sp-th img{width:100%;height:100%;object-fit:cover}
+.sp-tx{padding:16px 20px 20px;display:flex;flex-direction:column;gap:10px}
+.sp-tx h2{margin:0;font-size:22px;font-weight:800;letter-spacing:-.05em}.sp-tx h2 a{color:var(--yn)}
+.sp-tx ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.sp-tx li{padding:9px 0;border-top:1px solid #e1e1e1;font-size:15px;line-height:1.4;font-weight:500}
+.sp-more{font-size:13px;color:var(--mute)}
+@media(max-width:860px){.ser-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.sp-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px}.sp-head h1{font-size:30px}.ov-title{font-size:16px}.ov-box{padding:12px}}
+@media(max-width:520px){.sp-grid{grid-template-columns:1fr}}
