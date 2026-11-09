@@ -42,3 +42,5 @@
 @media(max-width:860px){.nmap-body{grid-template-columns:1fr}.pgrid2{grid-template-columns:repeat(2,minmax(0,1fr))}.vgrid{grid-template-columns:1fr}}
 @media(max-width:520px){.notice2{grid-template-columns:1fr}.pgrid2{gap:10px}.sl-hero .sl-ctl{top:8px;right:8px}}
 @media(prefers-reduced-motion:reduce){.sl-track{transition:none}}
+/* 홈페이지 맨 아래 정정·반론 보도 / 공지사항 칸(광고 칸 아래, 푸터 위) */
+.notice-band{margin-top:28px}.notice-band .notice2{margin:0 0 30px;gap:28px}.notice2 .nt-list{list-style:none;margin:0 0 8px;padding:0}.notice2 .nt-list li{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line,#e3e6ea);font-size:14px}.notice2 .nt-list li a,.notice2 .nt-list li span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.notice2 .nt-list time{flex:none;color:var(--muted,#6b7683);font-size:12px}.notice2 .nt-empty{color:var(--muted,#6b7683)}.notice2 .nt-more{display:flex;flex-wrap:wrap;gap:6px 14px;margin:8px 0 0;font-size:13px}.notice2 .nt-more a{color:var(--muted,#6b7683);text-decoration:underline}
