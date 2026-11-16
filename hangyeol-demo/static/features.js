@@ -40,5 +40,5 @@ $$('[data-page-size]').forEach(function(box){var rows=[].slice.call(box.children
   $$('[data-pg]',panel).forEach(function(b){b.addEventListener('click',function(){openSido(name,+b.dataset.pg)})})}
  var best=Object.keys(data).sort(function(a,b){return data[b].length-data[a].length})[0];openSido(best)})();
 })();
-/* 영상 목록: 세로 영상은 재생 전엔 사진 부분만 가로 칸에 맞춰 보이고, 재생하면 전체 화면 비율로 본다 */
-(function(){'use strict';function t(e,on){var v=e.target;if(v&&v.tagName==='VIDEO'&&v.parentNode&&v.parentNode.classList.contains('vid'))v.classList.toggle('vp',on)}document.addEventListener('play',function(e){t(e,true)},true);document.addEventListener('pause',function(e){if(e.target.currentTime<0.1)t(e,false)},true);document.addEventListener('ended',function(e){t(e,false)},true)})();
+/* 영상 목록: 세로 영상은 재생 전엔 사진 부분만 가로 칸에 맞춰 보이고, 재생하면 칸이 세로 비율로 늘어나 전체 화면을 본다 */
+(function(){'use strict';function t(e,on){var v=e.target;if(v&&v.tagName==='VIDEO'&&v.parentNode&&v.parentNode.classList.contains('vid'))v.parentNode.classList.toggle('vp',on)}document.addEventListener('play',function(e){t(e,true)},true);document.addEventListener('pause',function(e){if(e.target.currentTime<0.1)t(e,false)},true);document.addEventListener('ended',function(e){t(e,false)},true)})();
