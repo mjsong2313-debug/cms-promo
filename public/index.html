@@ -225,14 +225,25 @@
     <div class="eyebrow">공공기관 담당자께</div>
     <h2 id="vpT">우리 홈페이지, 밖에서는 어떻게 보일까요?</h2>
     <p class="vp-sum">매일 시민의 시각으로 읽기만 하고, 어제와 달라진 곳만 신호등으로 알려 드립니다. 로그인·입력·변경은 하지 않습니다.</p>
-    <div class="vp-tabs" role="tablist" aria-label="영상 고르기"><button type="button" class="vp-tab on" role="tab" aria-selected="true" data-v="0">① 홈페이지 점검 엔진</button><button type="button" class="vp-tab" role="tab" aria-selected="false" data-v="1">② 공보실·홍보실 최적화 시스템</button></div>
     <div class="vp-media"><div class="vp-hint" id="vpHint" hidden aria-live="polite"><span>🔊</span> 화면을 한 번 누르면 소리가 켜집니다</div>
     <video id="vpV" poster="assets/video/poster.jpg?v=2" controls playsinline preload="metadata"><source src="assets/video/smart-edge.mp4?v=3" type="video/mp4"><source src="assets/video/smart-edge.webm?v=3" type="video/webm"></video></div>
     <div class="vp-acts"><a class="btn" href="#apply" id="vpGo">진단 신청</a><button class="btn ghost" type="button" id="vpClose">닫기</button></div>
-    <p class="vp-note" id="vpNote">아래 영상은 홈페이지 앞단에 두는 엔진(별도 협의 단계)을 설명합니다. 기본 점검에는 포함되지 않으며, 점검은 읽기 전용이고 검색 순위·노출을 보장하지 않습니다.</p>
+    <p class="vp-note">아래 영상은 홈페이지 앞단에 두는 엔진(별도 협의 단계)을 설명합니다. 기본 점검에는 포함되지 않으며, 점검은 읽기 전용이고 검색 순위·노출을 보장하지 않습니다.</p>
   </div>
 </div>
-<script src="assets/js/popup.js" defer></script>
+<div class="vp-ov" id="vpOv2" role="dialog" aria-modal="true" aria-labelledby="vpT2" hidden>
+  <div class="vp-dlg">
+    <button class="vp-x" type="button" id="vpX2" aria-label="팝업 닫기">×</button>
+    <div class="eyebrow">공공기관 담당자께</div>
+    <h2 id="vpT2">매일 반복하는 기사 검색·스크랩, 버튼으로 줄입니다</h2>
+    <p class="vp-sum">신문사와 검색어를 한 번 지정하면 기사 모음부터 워드·PDF까지 한 화면에서 처리합니다. 판단은 담당자가 합니다.</p>
+    <div class="vp-media"><div class="vp-hint" id="vpHint2" hidden aria-live="polite"><span>🔊</span> 화면을 한 번 누르면 소리가 켜집니다</div>
+    <video id="vpV2" poster="assets/video/gongbo-poster.jpg?v=1" controls playsinline preload="metadata"><source src="assets/video/gongbo.mp4?v=1" type="video/mp4"><source src="assets/video/gongbo.webm?v=1" type="video/webm"></video></div>
+    <div class="vp-acts"><a class="btn" href="#apply" id="vpGo2">진단 신청</a><button class="btn ghost" type="button" id="vpClose2">닫기</button></div>
+    <p class="vp-note">영상의 화면은 시험용 가상 화면입니다. 신문사가 공개한 기사 목록 안에서 찾으며, 시험 단계입니다.</p>
+  </div>
+</div>
+<script src="assets/js/popup.js?v=2" defer></script>
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/pro.js?v=1" defer></script>
 <script src="assets/js/ux.js?v=3" defer></script><script src="assets/js/gov2.js?v=1" defer></script></body></html>
