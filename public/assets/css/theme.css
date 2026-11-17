@@ -130,3 +130,5 @@ footer{background:#050b14;color:#8fa0ad;border-top:0}
 .vp-dlg .btn{background:var(--lime);color:var(--ink)}.vp-dlg .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35)}
 .vp-ov{background:rgba(8,17,31,.32)}
 .vp-dlg,.vp-dlg h2{color:#fff}.vp-note{color:#9fb0d3}
+
+.vp-tabs{display:flex;gap:6px;flex-wrap:wrap}.vp-tab{flex:1 1 140px;min-height:44px;padding:6px 10px;border-radius:10px;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;font:700 13.5px/1.3 inherit;cursor:pointer}.vp-tab.on{background:var(--lime);color:var(--ink);border-color:var(--lime)}
