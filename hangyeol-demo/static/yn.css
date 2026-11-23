@@ -231,3 +231,7 @@ body .meta .cat{font-size:13px!important}
 .nw-badge,.nw-tag{color:var(--on-yn)}
 .pg-info{color:var(--mute)}
 @media(max-width:1000px){.nmap-panel{border-top-color:var(--bd)}}
+
+/* 삼선(전체 메뉴) 단추: 흰 바탕 메뉴줄에서 흰 줄이 안 보이던 문제 - 어두운 줄로 */
+.gnb .menubtn span{background:#111!important}.gnb .menubtn{border-right:0!important;margin-right:6px}.gnb .menubtn:hover{background:rgba(0,0,0,.07)!important}.gnb .menubtn:focus-visible{outline:3px solid #0b6b63!important}
+[data-theme=dark] .gnb .menubtn span,.dark .gnb .menubtn span{background:#eee!important}

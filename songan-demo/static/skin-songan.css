@@ -128,3 +128,11 @@ html[data-logo="4"] .logo img{height:76px}
 .slide .cap p,.mcap p{color:#fff!important;opacity:1!important;text-shadow:0 1px 3px rgba(0,0,0,.9)}
 .slide .cap .tag,.slide .cap .cat,.slide .cap a.tag{box-shadow:0 1px 4px rgba(0,0,0,.5)}
 @media(max-width:640px){.slide .cap{padding-top:70px!important;padding-bottom:50px!important}.slide .cap h2{font-size:20px}}
+
+/* 삼선(전체 메뉴) 단추와 왼쪽 서랍 */
+.gnb .menubtn{border-right:0;width:46px;margin-right:4px}
+.gnb .menubtn span{background:var(--fg);height:2.5px}
+.gnb .menubtn:hover{background:rgba(0,0,0,.06)}
+.gnb .menubtn:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+:root[data-theme=dark] .drawer{background:#0f1218;color:#e8eaee}
+.drawer .dhead strong{font-weight:800;letter-spacing:-.03em}
