@@ -121,3 +121,10 @@ html[data-logo="4"] .logo img{height:76px}
 :root[data-theme=dark] .card p,:root[data-theme=dark] .card.lead p{color:#c3c8d2}
 @media(max-width:640px){.card.lead h3{font-size:23px}.card h3{font-size:17px}.bsub .card h3{font-size:15.5px}}
 .slide .cap h2{font-family:var(--serif);font-weight:800;color:#fff;letter-spacing:-.03em;text-shadow:0 1px 6px rgba(0,0,0,.55)}.slide .cap p{color:#fff;opacity:.95}
+
+/* 사진 위 글자(슬라이드·사진 속 제목) 시인성: 아래쪽을 진하게 깔고 글자에 그림자, 점·멈춤 버튼과 겹치지 않게 */
+.slide .cap,.mbig .mcap,.msm .mcap{background:linear-gradient(to top,rgba(0,0,0,.92) 0,rgba(0,0,0,.82) 45%,rgba(0,0,0,.45) 75%,transparent 100%)!important;padding-top:90px!important;padding-bottom:56px!important}
+.slide .cap h2,.mbig h2,.msm h3,.mcap h2,.mcap h3{color:#fff!important;font-family:var(--serif);font-weight:800;text-shadow:0 1px 3px rgba(0,0,0,.9),0 2px 12px rgba(0,0,0,.7)}
+.slide .cap p,.mcap p{color:#fff!important;opacity:1!important;text-shadow:0 1px 3px rgba(0,0,0,.9)}
+.slide .cap .tag,.slide .cap .cat,.slide .cap a.tag{box-shadow:0 1px 4px rgba(0,0,0,.5)}
+@media(max-width:640px){.slide .cap{padding-top:70px!important;padding-bottom:50px!important}.slide .cap h2{font-size:20px}}
