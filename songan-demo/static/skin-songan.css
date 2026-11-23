@@ -110,3 +110,14 @@ html[data-logo="4"] .logo img{height:76px}
 :root:not([data-theme=light]) .sudomap .has.r-seoul path{fill:#5b7fc0}:root:not([data-theme=light]) .sudomap .has.r-gyeonggi path{fill:#46618f}:root:not([data-theme=light]) .sudomap .has.r-incheon path{fill:#4f6fa8}
 :root:not([data-theme=light]) .sudomap .sm-a path{stroke:#0f1218}:root:not([data-theme=light]) .sudomap .sm-t{fill:#e8eaee;stroke:#0f1218}
 :root:not([data-theme=light]) .logo img{filter:none;background:#fff;border-radius:6px;padding:4px 8px}}
+
+/* 제목 시인성: 명조(얇게 보임) 대신 굵은 고딕, 진한 검정, 사진 아래 제목 키움 */
+:root{--serif:Pretendard,'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif}
+.card h3,.card.lead h3,.sa-lead h3,.sa-lead h2,.bsub .card h3,.herolist a,.rank a,.article h1{font-family:var(--serif);font-weight:800;color:var(--fg);letter-spacing:-.03em;-webkit-font-smoothing:antialiased}
+.card.lead h3{font-size:26px;line-height:1.35}
+.card h3{font-size:18px;line-height:1.4}
+.bsub .card h3{font-size:16px}
+.card.lead p,.card p{color:#3d4350;font-size:15px;line-height:1.6}
+:root[data-theme=dark] .card p,:root[data-theme=dark] .card.lead p{color:#c3c8d2}
+@media(max-width:640px){.card.lead h3{font-size:23px}.card h3{font-size:17px}.bsub .card h3{font-size:15.5px}}
+.slide .cap h2{font-family:var(--serif);font-weight:800;color:#fff;letter-spacing:-.03em;text-shadow:0 1px 6px rgba(0,0,0,.55)}.slide .cap p{color:#fff;opacity:.95}
