@@ -1,4 +1,4 @@
-/* 태평일보 개편: 영남일보 홈을 실측한 색·글꼴·칸 배치를 따라 적용 (로고·문구는 태평일보 것) */
+/* 명주일보 개편: 영남일보 홈을 실측한 색·글꼴·칸 배치를 따라 적용 (로고·문구는 명주일보 것) */
 :root{--bg:#fff;--fg:#111;--mute:#666;--line:#d7d7d7;--soft:#e6f3f3;--brand:#03a39c;--accent:#03a39c;--link:#03a39c;--card:#fff;--on-brand:#fff;--on-accent:#fff;--gnb:#fff;--yn:#03a39c;--yn-d:#009592;--yn-l:#e6f3f3}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f1418;--fg:#eef2f2;--mute:#9db0b0;--line:#2a3636;--soft:#16262a;--brand:#2fd0c8;--accent:#2fd0c8;--link:#2fd0c8;--card:#141c20;--gnb:#0f1418;--yn:#2fd0c8;--yn-l:#16262a}}
 :root[data-theme=dark]{--bg:#0f1418;--fg:#eef2f2;--mute:#9db0b0;--line:#2a3636;--soft:#16262a;--brand:#2fd0c8;--accent:#2fd0c8;--link:#2fd0c8;--card:#141c20;--gnb:#0f1418;--yn:#2fd0c8;--yn-l:#16262a}
@@ -214,7 +214,7 @@ body .meta .cat{font-size:13px!important}
 @media(max-width:960px){.cols{grid-template-columns:minmax(0,1fr)!important;gap:28px}.main-col,.side-col,aside.side{min-width:0}}
 @media(max-width:600px){ul.plain li a,.nw-bl2 li a{font-size:16px}.nw-card h3,.nw-card h3 a{font-size:17px}.nw-bl h3,.nw-bl h3 a{font-size:20px}.nw-lead .cap h2{font-size:22px}}
 
-/* 새 로고(태평일보 ㅎ 아이콘형): 다크 모드에선 밝은 버전으로 교체, 기존 반전 필터 해제 */
+/* 새 로고(명주일보 ㅎ 아이콘형): 다크 모드에선 밝은 버전으로 교체, 기존 반전 필터 해제 */
 :root[data-theme=dark] .logo img{filter:none;content:url(logo-dark.svg)}
 @media(prefers-color-scheme:dark){:root:not([data-theme=light]) .logo img{filter:none;content:url(logo-dark.svg)}}
 @media(max-width:860px){.masthead .logo img{height:auto;width:min(200px,52vw)}}
