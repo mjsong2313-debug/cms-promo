@@ -46,3 +46,15 @@ html[data-logo="4"] .logo img{height:76px}
  .logo img{height:44px}html[data-logo="4"] .logo img{height:60px}
  .search input{width:130px}
 }
+
+/* 서울·경기·인천 지도 */
+.sa-map{max-width:560px;margin:8px auto 28px}.sa-map.sm{max-width:300px;margin:0 0 18px}
+.sudomap{width:100%;height:auto;display:block}
+.sudomap .sm-a path{stroke:#fff;stroke-width:1;stroke-linejoin:round;transition:fill .15s}
+.sudomap .r-seoul path{fill:#c9d4e6}.sudomap .r-gyeonggi path{fill:#e4e8ee}.sudomap .r-incheon path{fill:#d7e0ee}
+.sudomap .has.r-seoul path{fill:#6f8fc2}.sudomap .has.r-gyeonggi path{fill:#9fb3d6}.sudomap .has.r-incheon path{fill:#86a0cc}
+.sudomap .sm-a:hover path,.sudomap .sm-a:focus path{fill:#1f4fd8}.sudomap .on path{fill:#1f4fd8!important}
+.sudomap .sm-t{font:700 14px/1 system-ui,sans-serif;fill:#111;pointer-events:none;paint-order:stroke;stroke:#fff;stroke-width:3px}
+.rareas b{font-weight:700;color:#1f4fd8;margin-left:2px}
+.sa-regrow{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}.sa-regrow .sa-map{margin:0}
+@media(max-width:700px){.sa-regrow{grid-template-columns:1fr}.sa-regrow .sa-map{max-width:280px;margin:0 auto}}
